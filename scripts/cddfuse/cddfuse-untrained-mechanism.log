@@ -1,0 +1,109 @@
+[{"stream_name":"stderr","time":11.770457319,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.772002868,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.772009065,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.772013258,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.548301585,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.548332602,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.54833781,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.54834164,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":28.626939571,"data":"torch 2.10.0+cu128 | GPU Tesla T4\n"}
+,{"stream_name":"stdout","time":31.94610355,"data":"CDDFuse at 73681d28f6100461f1b214ecf77a93b495be227b | TNO pairs: 25\n"}
+,{"stream_name":"stdout","time":31.963594924,"data":"Writing /kaggle/working/cddfuse_untrained_mechanism.py\n"}
+,{"stream_name":"stdout","time":38.972484509,"data":"device cuda | torch 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":39.175725201,"data":"device cuda | torch 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":537.807669295,"data":"wrote /kaggle/working/results_cddfuse_mechanism/cddfuse_mechanism_summary.csv\n"}
+,{"stream_name":"stdout","time":537.807737732,"data":"\n"}
+,{"stream_name":"stdout","time":537.807747182,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.807754301,"data":"K1 -- does the released checkpoint reproduce CDDFuse's published TNO row?\n"}
+,{"stream_name":"stdout","time":537.80776128,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.807989049,"data":"  EN    ours   7.1203   published   7.12   OK\n"}
+,{"stream_name":"stdout","time":537.808014651,"data":"  SD    ours  46.0024   published  46.00   OK\n"}
+,{"stream_name":"stdout","time":537.808022084,"data":"  SF    ours  13.1520   published  13.15   OK\n"}
+,{"stream_name":"stdout","time":537.808028158,"data":"  MI    ours   2.1864   published   2.19   OK\n"}
+,{"stream_name":"stdout","time":537.808033553,"data":"  SCD   ours   1.7607   published   1.76   OK\n"}
+,{"stream_name":"stdout","time":537.808059326,"data":"  VIF   ours   0.7683   published   0.77   OK\n"}
+,{"stream_name":"stdout","time":537.808064466,"data":"  Qabf  ours   0.5393   published   0.54   OK\n"}
+,{"stream_name":"stdout","time":537.808070659,"data":"  SSIM  ours   1.0295   published   1.03   OK\n"}
+,{"stream_name":"stdout","time":537.808076237,"data":"\n"}
+,{"stream_name":"stdout","time":537.808081941,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.80808765,"data":"RESEMBLANCE (mean Pearson r over 25 pairs)\n"}
+,{"stream_name":"stdout","time":537.8080934,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.808099504,"data":"  trained  VI 0.782  IR 0.243  MEAN 0.914  MAX 0.947   winner MAX\n"}
+,{"stream_name":"stdout","time":537.808105298,"data":"  U42      VI 0.998  IR -0.247  MEAN 0.668  MAX 0.660   winner VI\n"}
+,{"stream_name":"stdout","time":537.808128297,"data":"  U43      VI 0.997  IR -0.242  MEAN 0.673  MAX 0.657   winner VI\n"}
+,{"stream_name":"stdout","time":537.808133969,"data":"  U44      VI 0.998  IR -0.282  MEAN 0.640  MAX 0.636   winner VI\n"}
+,{"stream_name":"stdout","time":537.808138797,"data":"  U45      VI 0.996  IR -0.215  MEAN 0.691  MAX 0.672   winner VI\n"}
+,{"stream_name":"stdout","time":537.808143238,"data":"  U46      VI 0.996  IR -0.242  MEAN 0.671  MAX 0.662   winner VI\n"}
+,{"stream_name":"stdout","time":537.808147963,"data":"\n"}
+,{"stream_name":"stdout","time":537.808152495,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.808157347,"data":"UNTRAINED (mean of 5 seeds) vs RELEASED -- one-sample t, df = 4\n"}
+,{"stream_name":"stdout","time":537.808161852,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.808166461,"data":"  EN    untrained   7.0145 +/-0.0325   released   7.1203   t =    -7.29  *\n"}
+,{"stream_name":"stdout","time":537.808171219,"data":"  SD    untrained  46.4067 +/-0.9583   released  46.0024   t =    +0.94\n"}
+,{"stream_name":"stdout","time":537.808175919,"data":"  SF    untrained  10.7923 +/-0.3857   released  13.1520   t =   -13.68  *\n"}
+,{"stream_name":"stdout","time":537.808180389,"data":"  MI    untrained   3.4738 +/-0.1799   released   2.1864   t =   +16.00  *\n"}
+,{"stream_name":"stdout","time":537.808184402,"data":"  SCD   untrained   0.9278 +/-0.2198   released   1.7607   t =    -8.47  *\n"}
+,{"stream_name":"stdout","time":537.808188375,"data":"  VIF   untrained   0.9450 +/-0.0260   released   0.7683   t =   +15.17  *\n"}
+,{"stream_name":"stdout","time":537.808192395,"data":"  Qabf  untrained   0.5260 +/-0.0041   released   0.5393   t =    -7.23  *\n"}
+,{"stream_name":"stdout","time":537.80820096,"data":"  SSIM  untrained   0.9036 +/-0.0199   released   1.0295   t =   -14.17  *\n"}
+,{"stream_name":"stdout","time":537.808205914,"data":"\n"}
+,{"stream_name":"stdout","time":537.80821034,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.808214472,"data":"READING (registered in this file's docstring, committed before the first run)\n"}
+,{"stream_name":"stdout","time":537.808218663,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":537.80822317,"data":"  copy criterion: VI wins 5 of 5, mean r 0.997 -\u003e MET\n"}
+,{"stream_name":"stdout","time":537.808231806,"data":"  inversion criterion: MI t = +16.00, VIF t = +15.17 -\u003e MET\n"}
+,{"stream_name":"stdout","time":537.808236046,"data":"  released checkpoint's own r to VI: 0.782\n"}
+,{"stream_name":"stdout","time":537.808240262,"data":"  H1 TRANSFERS: the residual-copy inversion appears in CDDFuse too.\n"}
+,{"stream_name":"stdout","time":538.012450871,"data":"wrote /kaggle/working/results_cddfuse_mechanism/cddfuse_mechanism_summary.csv\n"}
+,{"stream_name":"stdout","time":538.012479141,"data":"\n"}
+,{"stream_name":"stdout","time":538.012487191,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012495719,"data":"K1 -- does the released checkpoint reproduce CDDFuse's published TNO row?\n"}
+,{"stream_name":"stdout","time":538.012499316,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012511436,"data":"  EN    ours   7.1203   published   7.12   OK\n"}
+,{"stream_name":"stdout","time":538.012514323,"data":"  SD    ours  46.0024   published  46.00   OK\n"}
+,{"stream_name":"stdout","time":538.012516606,"data":"  SF    ours  13.1520   published  13.15   OK\n"}
+,{"stream_name":"stdout","time":538.012518856,"data":"  MI    ours   2.1864   published   2.19   OK\n"}
+,{"stream_name":"stdout","time":538.012521111,"data":"  SCD   ours   1.7607   published   1.76   OK\n"}
+,{"stream_name":"stdout","time":538.012525362,"data":"  VIF   ours   0.7683   published   0.77   OK\n"}
+,{"stream_name":"stdout","time":538.012527819,"data":"  Qabf  ours   0.5393   published   0.54   OK\n"}
+,{"stream_name":"stdout","time":538.012530069,"data":"  SSIM  ours   1.0295   published   1.03   OK\n"}
+,{"stream_name":"stdout","time":538.012532413,"data":"\n"}
+,{"stream_name":"stdout","time":538.012534643,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012536938,"data":"RESEMBLANCE (mean Pearson r over 25 pairs)\n"}
+,{"stream_name":"stdout","time":538.012539183,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012541571,"data":"  trained  VI 0.782  IR 0.243  MEAN 0.914  MAX 0.947   winner MAX\n"}
+,{"stream_name":"stdout","time":538.0125438,"data":"  U42      VI 0.998  IR -0.247  MEAN 0.668  MAX 0.660   winner VI\n"}
+,{"stream_name":"stdout","time":538.012546115,"data":"  U43      VI 0.997  IR -0.242  MEAN 0.673  MAX 0.657   winner VI\n"}
+,{"stream_name":"stdout","time":538.012548741,"data":"  U44      VI 0.998  IR -0.282  MEAN 0.640  MAX 0.636   winner VI\n"}
+,{"stream_name":"stdout","time":538.01255102,"data":"  U45      VI 0.996  IR -0.215  MEAN 0.691  MAX 0.672   winner VI\n"}
+,{"stream_name":"stdout","time":538.012553335,"data":"  U46      VI 0.996  IR -0.242  MEAN 0.671  MAX 0.662   winner VI\n"}
+,{"stream_name":"stdout","time":538.012555663,"data":"\n"}
+,{"stream_name":"stdout","time":538.012557864,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012560148,"data":"UNTRAINED (mean of 5 seeds) vs RELEASED -- one-sample t, df = 4\n"}
+,{"stream_name":"stdout","time":538.012562392,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012564674,"data":"  EN    untrained   7.0145 +/-0.0325   released   7.1203   t =    -7.29  *\n"}
+,{"stream_name":"stdout","time":538.012566925,"data":"  SD    untrained  46.4067 +/-0.9583   released  46.0024   t =    +0.94\n"}
+,{"stream_name":"stdout","time":538.012569235,"data":"  SF    untrained  10.7923 +/-0.3857   released  13.1520   t =   -13.68  *\n"}
+,{"stream_name":"stdout","time":538.012572369,"data":"  MI    untrained   3.4738 +/-0.1799   released   2.1864   t =   +16.00  *\n"}
+,{"stream_name":"stdout","time":538.012574613,"data":"  SCD   untrained   0.9278 +/-0.2198   released   1.7607   t =    -8.47  *\n"}
+,{"stream_name":"stdout","time":538.012577696,"data":"  VIF   untrained   0.9450 +/-0.0260   released   0.7683   t =   +15.17  *\n"}
+,{"stream_name":"stdout","time":538.012580099,"data":"  Qabf  untrained   0.5260 +/-0.0041   released   0.5393   t =    -7.23  *\n"}
+,{"stream_name":"stdout","time":538.012582339,"data":"  SSIM  untrained   0.9036 +/-0.0199   released   1.0295   t =   -14.17  *\n"}
+,{"stream_name":"stdout","time":538.012584583,"data":"\n"}
+,{"stream_name":"stdout","time":538.012586747,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012591138,"data":"READING (registered in this file's docstring, committed before the first run)\n"}
+,{"stream_name":"stdout","time":538.01259366,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":538.012595984,"data":"  copy criterion: VI wins 5 of 5, mean r 0.997 -\u003e MET\n"}
+,{"stream_name":"stdout","time":538.012598998,"data":"  inversion criterion: MI t = +16.00, VIF t = +15.17 -\u003e MET\n"}
+,{"stream_name":"stdout","time":538.012601236,"data":"  released checkpoint's own r to VI: 0.782\n"}
+,{"stream_name":"stdout","time":538.012603443,"data":"  H1 TRANSFERS: the residual-copy inversion appears in CDDFuse too.\n"}
+,{"stream_name":"stdout","time":542.63263625,"data":"EXIT 0\n"}
+,{"stream_name":"stderr","time":545.673141885,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":545.67319585,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":545.898024654,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":545.898076564,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":546.594243214,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":546.891413934,"data":"[NbConvertApp] Writing 22845 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":549.25611781,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":550.125267636,"data":"[NbConvertApp] Writing 342595 bytes to __results__.html\n"}
+]

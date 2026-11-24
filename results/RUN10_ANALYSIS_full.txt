@@ -1,0 +1,48 @@
+====================================================================================================
+RUN 10 -- KILL CRITERIA, checked per setting before any statistic
+====================================================================================================
+  [OK  ] nb=2: 12 seeds (50-61), finite, final losses 54,667-59,604 within 3x of existing 54,450-58,741
+  [OK  ] nb=4: 12 seeds (50-61), finite, final losses 53,998-58,756 within 3x of existing 54,175-58,405
+  [OK  ] nb=6: 12 seeds (50-61), finite, final losses 54,240-59,054 within 3x of existing 54,176-58,046
+  status: nb=2 OK, nb=4 OK, nb=6 OK
+
+====================================================================================================
+A. CONFIRMATORY -- SCD, nb=2 against nb=4, new seeds 50-61 only, Welch two-sided 5 %
+====================================================================================================
+  nb=2 1.2933 +/-0.0277   nb=4 1.2704 +/-0.0531   diff +0.0229 = +0.54 pooled sigma
+  Welch t = +1.325, df = 16.6, p = 0.2031
+  A2 NOT REPLICATED (p >= 0.05): Run 9's cell was consistent with chance, as the correction for 27 tests
+  indicated. Power was 82 % at the selected 1.23 sigma and 47 % at 0.8 sigma, so this does not show
+  the effect is zero, only that it did not replicate at that size.
+
+====================================================================================================
+B. SECONDARY -- TOST at +/-1.75 pooled sigma on all seeds pooled (n = 20 per arm)
+====================================================================================================
+  4v2 SF  : d = -0.77 sigma, 90 % CI [-1.31, -0.24], Welch p = 0.0191, TOST p = 0.0019 -> EQUIVALENT AND DIFFERENT -- a real difference smaller than the design resolution
+  4v2 AG  : d = -0.64 sigma, 90 % CI [-1.17, -0.10], Welch p = 0.0514, TOST p = 0.0006 -> EQUIVALENT
+  4v2 SCD : d = -0.82 sigma, 90 % CI [-1.35, -0.28], Welch p = 0.0152, TOST p = 0.0032 -> EQUIVALENT AND DIFFERENT -- a real difference smaller than the design resolution
+  4v6 SF  : d = +0.62 sigma, 90 % CI [+0.09, +1.15], Welch p = 0.0579, TOST p = 0.0005 -> EQUIVALENT
+
+====================================================================================================
+FULL TABLE AT n = 20 -- descriptive, Holm across 18 cells (2 and 6 against 4)
+====================================================================================================
+      cell  d (sigma)       t        p    Holm   TOST p
+    4v2 EN      -0.22   -0.69   0.4959   1.000   0.0000
+    4v2 MI      +0.09   +0.28   0.7792   1.000   0.0000
+    4v2 SD      +0.48   +1.52   0.1361   0.965   0.0001
+    4v2 SF      -0.77   -2.45   0.0191   0.306   0.0019
+    4v2 AG      -0.64   -2.01   0.0514   0.514   0.0006
+   4v2 VIF      -0.69   -2.18   0.0360   0.431   0.0009
+   4v2 SCD      -0.82   -2.58   0.0152   0.259   0.0032
+  4v2 Qabf      -0.71   -2.23   0.0315   0.418   0.0011
+  4v2 SSIM      -0.34   -1.07   0.2906   1.000   0.0000
+    4v6 EN      -0.22   -0.69   0.4934   1.000   0.0000
+    4v6 MI      +0.03   +0.10   0.9174   1.000   0.0000
+    4v6 SD      -0.50   -1.59   0.1206   0.965   0.0002
+    4v6 SF      +0.62   +1.96   0.0579   0.521   0.0005
+    4v6 AG      +0.72   +2.29   0.0279   0.418   0.0013
+   4v6 VIF      +0.88   +2.77   0.0088   0.159   0.0044
+   4v6 SCD      +0.68   +2.14   0.0390   0.431   0.0008
+  4v6 Qabf      +0.72   +2.27   0.0293   0.418   0.0012
+  4v6 SSIM      +0.24   +0.76   0.4541   1.000   0.0000
+  8 of 18 uncorrected, 0 of 18 after Holm. Descriptive; Run 9's count is not replaced.

@@ -1,0 +1,11 @@
+# Training ran on Kaggle (NVIDIA Tesla T4, 16 GB) with torch 2.10.0 built for CUDA 12.8. The other
+# packages were those of the Kaggle GPU image at run time; their versions were not recorded, so they
+# are not pinned here. The CrossFuse checkpoint reproduction and the SeAFusion control ran on CPU
+# with torch 2.2.2.
+torch==2.10.0
+torchvision
+numpy
+opencv-python
+scipy
+scikit-image
+kaggle  # only for the scripts that build and launch Kaggle kernels

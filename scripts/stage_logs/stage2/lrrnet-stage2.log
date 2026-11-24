@@ -1,0 +1,268 @@
+[{"stream_name":"stderr","time":6.352905415,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.352967803,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.352973898,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.3529776909999995,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.928500472,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.928529531,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.928535168,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.928539796,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.912344068,"data":"Wed Sep  2 07:45:27 2026       \n"}
+,{"stream_name":"stdout","time":8.912409696,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":8.912414532,"data":"| NVIDIA-SMI 580.159.04             Driver Version: 580.159.04     CUDA Version: 13.0     |\n"}
+,{"stream_name":"stdout","time":8.912420015,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":8.912426641,"data":"| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n"}
+,{"stream_name":"stdout","time":8.912429258,"data":"| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n"}
+,{"stream_name":"stdout","time":8.912431816,"data":"|                                         |                        |               MIG M. |\n"}
+,{"stream_name":"stdout","time":8.91243426,"data":"|=========================================+========================+======================|\n"}
+,{"stream_name":"stdout","time":8.912436755,"data":"|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":8.912439087,"data":"| N/A   38C    P8              9W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":8.912441436,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":8.9124437,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":8.912445991,"data":"|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":8.912448266,"data":"| N/A   41C    P8              9W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":8.91245069,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":8.912452972,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":8.912455675,"data":"\n"}
+,{"stream_name":"stdout","time":8.912474808,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":8.912479056,"data":"| Processes:                                                                              |\n"}
+,{"stream_name":"stdout","time":8.912497456,"data":"|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n"}
+,{"stream_name":"stdout","time":8.912501542,"data":"|        ID   ID                                                               Usage      |\n"}
+,{"stream_name":"stdout","time":8.912505113,"data":"|=========================================================================================|\n"}
+,{"stream_name":"stdout","time":8.91250864,"data":"|  No running processes found                                                             |\n"}
+,{"stream_name":"stdout","time":8.912513318,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":8.912516813,"data":"\n"}
+,{"stream_name":"stdout","time":12.287356491,"data":"torch 2.10.0+cu128 | GPUs: 2\n"}
+,{"stream_name":"stderr","time":12.320027401,"data":"Cloning into 'imagefusion-LRRNet'...\n"}
+,{"stream_name":"stderr","time":12.522539793,"data":"Cloning into 'imagefusion-LRRNet'...\n"}
+,{"stream_name":"stderr","time":12.522590284,"data":"\n"}
+,{"stream_name":"stderr","time":12.522602876,"data":"Cloning into 'imagefusion-LRRNet'...\n"}
+,{"stream_name":"stdout","time":14.100123605,"data":"mounted inputs: ['datasets']\n"}
+,{"stream_name":"stdout","time":69.31425762,"data":"copied patch_lrrnet.py from /kaggle/input/datasets/mostafanada82/lrrnet-replication-scripts/patch_lrrnet.py\n"}
+,{"stream_name":"stdout","time":92.544597791,"data":"copied make_vgg16_weights.py from /kaggle/input/datasets/mostafanada82/lrrnet-replication-scripts/make_vgg16_weights.py\n"}
+,{"stream_name":"stdout","time":118.001484972,"data":"copied fuse_lrrnet.py from /kaggle/input/datasets/mostafanada82/lrrnet-replication-scripts/fuse_lrrnet.py\n"}
+,{"stream_name":"stdout","time":141.04812183,"data":"\n"}
+,{"stream_name":"stdout","time":141.048154201,"data":"args.py:\n"}
+,{"stream_name":"stdout","time":141.048161983,"data":"  [OK  ] args.py/os import\n"}
+,{"stream_name":"stdout","time":141.048170121,"data":"  [OK  ] args.py/epochs\n"}
+,{"stream_name":"stdout","time":141.04817354,"data":"  [OK  ] args.py/path_ir\n"}
+,{"stream_name":"stdout","time":141.048176729,"data":"  [OK  ] args.py compiles\n"}
+,{"stream_name":"stdout","time":141.048179953,"data":"\n"}
+,{"stream_name":"stdout","time":141.048183174,"data":"training_fusion_lrr.py:\n"}
+,{"stream_name":"stdout","time":141.048186426,"data":"  [OK  ] training_fusion_lrr.py/seeding\n"}
+,{"stream_name":"stdout","time":141.048189615,"data":"  [OK  ] training_fusion_lrr.py/train_num\n"}
+,{"stream_name":"stdout","time":141.048192899,"data":"  [OK  ] training_fusion_lrr.py/num_block\n"}
+,{"stream_name":"stdout","time":141.048196073,"data":"  [OK  ] training_fusion_lrr.py/ir-\u003evi path\n"}
+,{"stream_name":"stdout","time":141.048199747,"data":"  [OK  ] training_fusion_lrr.py/timer start\n"}
+,{"stream_name":"stdout","time":141.048202871,"data":"  [OK  ] training_fusion_lrr.py/timer print\n"}
+,{"stream_name":"stdout","time":141.048205936,"data":"  [OK  ] training_seeded.py compiles\n"}
+,{"stream_name":"stdout","time":141.048209123,"data":"\n"}
+,{"stream_name":"stdout","time":141.048212152,"data":"wrote args.py\n"}
+,{"stream_name":"stdout","time":141.048215239,"data":"\n"}
+,{"stream_name":"stdout","time":141.048218263,"data":"wrote training_seeded.py\n"}
+,{"stream_name":"stdout","time":141.048221444,"data":"wrote visdom.py (stub)\n"}
+,{"stream_name":"stdout","time":141.144590819,"data":"copied eval_fused.py from /kaggle/input/datasets/mostafanada82/lrrnet-replication-scripts/eval_fused.py\n"}
+,{"stream_name":"stdout","time":141.144619104,"data":"\n"}
+,{"stream_name":"stdout","time":141.144639858,"data":"args.py:\n"}
+,{"stream_name":"stdout","time":141.144644688,"data":"  [OK  ] args.py/os import\n"}
+,{"stream_name":"stdout","time":141.144648116,"data":"  [OK  ] args.py/epochs\n"}
+,{"stream_name":"stdout","time":141.14465192,"data":"  [OK  ] args.py/path_ir\n"}
+,{"stream_name":"stdout","time":141.144655472,"data":"  [OK  ] args.py compiles\n"}
+,{"stream_name":"stdout","time":141.144658928,"data":"\n"}
+,{"stream_name":"stdout","time":141.144662271,"data":"training_fusion_lrr.py:\n"}
+,{"stream_name":"stdout","time":141.144665722,"data":"  [OK  ] training_fusion_lrr.py/seeding\n"}
+,{"stream_name":"stdout","time":141.144669122,"data":"  [OK  ] training_fusion_lrr.py/train_num\n"}
+,{"stream_name":"stdout","time":141.144672732,"data":"  [OK  ] training_fusion_lrr.py/num_block\n"}
+,{"stream_name":"stdout","time":141.144676373,"data":"  [OK  ] training_fusion_lrr.py/ir-\u003evi path\n"}
+,{"stream_name":"stdout","time":141.144680632,"data":"  [OK  ] training_fusion_lrr.py/timer start\n"}
+,{"stream_name":"stdout","time":141.144684368,"data":"  [OK  ] training_fusion_lrr.py/timer print\n"}
+,{"stream_name":"stdout","time":141.144694327,"data":"  [OK  ] training_seeded.py compiles\n"}
+,{"stream_name":"stdout","time":141.144697934,"data":"\n"}
+,{"stream_name":"stdout","time":141.14470132,"data":"wrote args.py\n"}
+,{"stream_name":"stdout","time":141.144705305,"data":"\n"}
+,{"stream_name":"stdout","time":141.144709158,"data":"wrote training_seeded.py\n"}
+,{"stream_name":"stdout","time":141.144713822,"data":"wrote visdom.py (stub)\n"}
+,{"stream_name":"stdout","time":149.342541872,"data":"Downloading: \"https://download.pytorch.org/models/vgg16-397923af.pth\" to /root/.cache/torch/hub/checkpoints/vgg16-397923af.pth\n"}
+,{"stream_name":"stdout","time":149.549868604,"data":"Downloading: \"https://download.pytorch.org/models/vgg16-397923af.pth\" to /root/.cache/torch/hub/checkpoints/vgg16-397923af.pth\n"}
+,{"stream_name":"stderr","time":149.55119278,"data":"\r  0%|          | 0.00/528M [00:00\u003c?, ?B/s]\r  3%|▎         | 16.6M/528M [00:00\u003c00:03, 173MB/s]\r  7%|▋         | 34.8M/528M [00:00\u003c00:02, 183MB/s]\r  0%|          | 0.00/528M [00:00\u003c?, ?B/s]\r  3%|▎         | 16.6M/528M [00:00\u003c00:03, 173MB/s]\r  7%|▋         | 34.8M/528M [00:00\u003c00:02, 183MB/s]\n"}
+,{"stream_name":"stderr","time":149.847420839,"data":"\r  0%|          | 0.00/528M [00:00\u003c?, ?B/s]\r  3%|▎         | 16.6M/528M [00:00\u003c00:03, 173MB/s]\r  7%|▋         | 34.8M/528M [00:00\u003c00:02, 183MB/s]\r 10%|▉         | 52.4M/528M [00:00\u003c00:02, 183MB/s]\r 13%|█▎        | 70.0M/528M [00:00\u003c00:02, 184MB/s]\r 17%|█▋        | 87.8M/528M [00:00\u003c00:02, 184MB/s]\r 10%|▉         | 52.4M/528M [00:00\u003c00:02, 183MB/s]\r 13%|█▎        | 70.0M/528M [00:00\u003c00:02, 184MB/s]\r 17%|█▋        | 87.8M/528M [00:00\u003c00:02, 184MB/s]\n"}
+,{"stream_name":"stderr","time":150.149357588,"data":"\r 10%|▉         | 52.4M/528M [00:00\u003c00:02, 183MB/s]\r 13%|█▎        | 70.0M/528M [00:00\u003c00:02, 184MB/s]\r 17%|█▋        | 87.8M/528M [00:00\u003c00:02, 184MB/s]\r 20%|█▉        | 105M/528M [00:00\u003c00:02, 183MB/s] \r 23%|██▎       | 123M/528M [00:00\u003c00:02, 184MB/s]\r 27%|██▋       | 141M/528M [00:00\u003c00:02, 185MB/s]\r 20%|█▉        | 105M/528M [00:00\u003c00:02, 183MB/s] \r 23%|██▎       | 123M/528M [00:00\u003c00:02, 184MB/s]\n"}
+,{"stream_name":"stderr","time":150.35031243,"data":"\r 20%|█▉        | 105M/528M [00:00\u003c00:02, 183MB/s] \r 23%|██▎       | 123M/528M [00:00\u003c00:02, 184MB/s]\r 30%|███       | 159M/528M [00:00\u003c00:02, 185MB/s]\r 33%|███▎      | 177M/528M [00:01\u003c00:01, 186MB/s]\r 27%|██▋       | 141M/528M [00:00\u003c00:02, 185MB/s]\r 30%|███       | 159M/528M [00:00\u003c00:02, 185MB/s]\r 33%|███▎      | 177M/528M [00:01\u003c00:01, 186MB/s]\n"}
+,{"stream_name":"stderr","time":150.651199141,"data":"\r 27%|██▋       | 141M/528M [00:00\u003c00:02, 185MB/s]\r 30%|███       | 159M/528M [00:00\u003c00:02, 185MB/s]\r 33%|███▎      | 177M/528M [00:01\u003c00:01, 186MB/s]\r 37%|███▋      | 196M/528M [00:01\u003c00:01, 191MB/s]\r 41%|████      | 217M/528M [00:01\u003c00:01, 198MB/s]\r 45%|████▍     | 237M/528M [00:01\u003c00:01, 204MB/s]\r 37%|███▋      | 196M/528M [00:01\u003c00:01, 191MB/s]\r 41%|████      | 217M/528M [00:01\u003c00:01, 198MB/s]\n"}
+,{"stream_name":"stderr","time":150.852632313,"data":"\r 37%|███▋      | 196M/528M [00:01\u003c00:01, 191MB/s]\r 41%|████      | 217M/528M [00:01\u003c00:01, 198MB/s]\r 49%|████▉     | 258M/528M [00:01\u003c00:01, 207MB/s]\r 53%|█████▎    | 278M/528M [00:01\u003c00:01, 209MB/s]\r 45%|████▍     | 237M/528M [00:01\u003c00:01, 204MB/s]\r 49%|████▉     | 258M/528M [00:01\u003c00:01, 207MB/s]\n"}
+,{"stream_name":"stderr","time":151.053652039,"data":"\r 45%|████▍     | 237M/528M [00:01\u003c00:01, 204MB/s]\r 49%|████▉     | 258M/528M [00:01\u003c00:01, 207MB/s]\r 57%|█████▋    | 298M/528M [00:01\u003c00:01, 203MB/s]\r 53%|█████▎    | 278M/528M [00:01\u003c00:01, 209MB/s]\r 57%|█████▋    | 298M/528M [00:01\u003c00:01, 203MB/s]\n"}
+,{"stream_name":"stderr","time":151.264085604,"data":"\r 53%|█████▎    | 278M/528M [00:01\u003c00:01, 209MB/s]\r 57%|█████▋    | 298M/528M [00:01\u003c00:01, 203MB/s]\r 60%|██████    | 318M/528M [00:01\u003c00:01, 205MB/s]\r 64%|██████▍   | 339M/528M [00:01\u003c00:00, 209MB/s]\r 60%|██████    | 318M/528M [00:01\u003c00:01, 205MB/s]\r 64%|██████▍   | 339M/528M [00:01\u003c00:00, 209MB/s]\n"}
+,{"stream_name":"stderr","time":151.483540099,"data":"\r 60%|██████    | 318M/528M [00:01\u003c00:01, 205MB/s]\r 64%|██████▍   | 339M/528M [00:01\u003c00:00, 209MB/s]\r 68%|██████▊   | 359M/528M [00:01\u003c00:00, 197MB/s]\r 72%|███████▏  | 379M/528M [00:02\u003c00:00, 200MB/s]\r 76%|███████▌  | 400M/528M [00:02\u003c00:00, 204MB/s]\r 68%|██████▊   | 359M/528M [00:01\u003c00:00, 197MB/s]\r 72%|███████▏  | 379M/528M [00:02\u003c00:00, 200MB/s]\n"}
+,{"stream_name":"stderr","time":151.68480261,"data":"\r 68%|██████▊   | 359M/528M [00:01\u003c00:00, 197MB/s]\r 72%|███████▏  | 379M/528M [00:02\u003c00:00, 200MB/s]\r 80%|███████▉  | 420M/528M [00:02\u003c00:00, 206MB/s]\r 83%|████████▎ | 440M/528M [00:02\u003c00:00, 208MB/s]\r 76%|███████▌  | 400M/528M [00:02\u003c00:00, 204MB/s]\r 80%|███████▉  | 420M/528M [00:02\u003c00:00, 206MB/s]\r 83%|████████▎ | 440M/528M [00:02\u003c00:00, 208MB/s]\n"}
+,{"stream_name":"stderr","time":151.986734059,"data":"\r 76%|███████▌  | 400M/528M [00:02\u003c00:00, 204MB/s]\r 80%|███████▉  | 420M/528M [00:02\u003c00:00, 206MB/s]\r 83%|████████▎ | 440M/528M [00:02\u003c00:00, 208MB/s]\r 87%|████████▋ | 461M/528M [00:02\u003c00:00, 210MB/s]\r 91%|█████████ | 481M/528M [00:02\u003c00:00, 212MB/s]\r 95%|█████████▌| 502M/528M [00:02\u003c00:00, 212MB/s]\r 87%|████████▋ | 461M/528M [00:02\u003c00:00, 210MB/s]\r 91%|█████████ | 481M/528M [00:02\u003c00:00, 212MB/s]\n"}
+,{"stream_name":"stderr","time":152.111636582,"data":"\r 87%|████████▋ | 461M/528M [00:02\u003c00:00, 210MB/s]\r 91%|█████████ | 481M/528M [00:02\u003c00:00, 212MB/s]\r 99%|█████████▉| 522M/528M [00:02\u003c00:00, 213MB/s]\r100%|██████████| 528M/528M [00:02\u003c00:00, 200MB/s]\n"}
+,{"stream_name":"stderr","time":152.188205019,"data":"\r 95%|█████████▌| 502M/528M [00:02\u003c00:00, 212MB/s]\r 99%|█████████▉| 522M/528M [00:02\u003c00:00, 213MB/s]\r100%|██████████| 528M/528M [00:02\u003c00:00, 200MB/s]\n"}
+,{"stream_name":"stderr","time":152.18823427,"data":"\n"}
+,{"stream_name":"stderr","time":152.188239134,"data":"\r 95%|█████████▌| 502M/528M [00:02\u003c00:00, 212MB/s]\r 99%|█████████▉| 522M/528M [00:02\u003c00:00, 213MB/s]\r100%|██████████| 528M/528M [00:02\u003c00:00, 200MB/s]\n"}
+,{"stream_name":"stdout","time":152.540557494,"data":"  #  torchvision key  -\u003e LRRNet slot     shape                  ok\n"}
+,{"stream_name":"stdout","time":152.540589106,"data":"--------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":152.540592788,"data":"  0  0.weight         conv1_1.weight     (64, 3, 3, 3)          OK\n"}
+,{"stream_name":"stdout","time":152.540595617,"data":"  1  0.bias           conv1_1.bias       (64,)                  OK\n"}
+,{"stream_name":"stdout","time":152.540598201,"data":"  2  2.weight         conv1_2.weight     (64, 64, 3, 3)         OK\n"}
+,{"stream_name":"stdout","time":152.540600473,"data":"  3  2.bias           conv1_2.bias       (64,)                  OK\n"}
+,{"stream_name":"stdout","time":152.540602795,"data":"  4  5.weight         conv2_1.weight     (128, 64, 3, 3)        OK\n"}
+,{"stream_name":"stdout","time":152.54060504,"data":"  5  5.bias           conv2_1.bias       (128,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540607625,"data":"  6  7.weight         conv2_2.weight     (128, 128, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.540623782,"data":"  7  7.bias           conv2_2.bias       (128,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540628003,"data":"  8  10.weight        conv3_1.weight     (256, 128, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.540632416,"data":"  9  10.bias          conv3_1.bias       (256,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540636177,"data":" 10  12.weight        conv3_2.weight     (256, 256, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.540640887,"data":" 11  12.bias          conv3_2.bias       (256,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540644723,"data":" 12  14.weight        conv3_3.weight     (256, 256, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.5406486,"data":" 13  14.bias          conv3_3.bias       (256,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540652004,"data":" 14  17.weight        conv4_1.weight     (512, 256, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.540655503,"data":" 15  17.bias          conv4_1.bias       (512,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540658988,"data":" 16  19.weight        conv4_2.weight     (512, 512, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.540662431,"data":" 17  19.bias          conv4_2.bias       (512,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540665856,"data":" 18  21.weight        conv4_3.weight     (512, 512, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.540669229,"data":" 19  21.bias          conv4_3.bias       (512,)                 OK\n"}
+,{"stream_name":"stdout","time":152.540672596,"data":"\n"}
+,{"stream_name":"stdout","time":152.540675787,"data":"All 20 tensors are in the order init_vgg16 consumes them, with matching shapes.\n"}
+,{"stream_name":"stdout","time":152.540689882,"data":"\n"}
+,{"stream_name":"stdout","time":152.540695002,"data":"wrote model/vgg/vgg16.pth  (30.5 MB, 20 tensors)\n"}
+,{"stream_name":"stdout","time":152.540701341,"data":"Deviation to record: LRRNet ships no vgg16.pth, so these are torchvision's ImageNet VGG16 weights.\n"}
+,{"stream_name":"stdout","time":152.540704041,"data":"They are the standard source and match the positional layout the code expects, but the authors'\n"}
+,{"stream_name":"stdout","time":152.540706852,"data":"exact file was not published and cannot be verified against.\n"}
+,{"stream_name":"stdout","time":152.743220431,"data":"  #  torchvision key  -\u003e LRRNet slot     shape                  ok\n"}
+,{"stream_name":"stdout","time":152.743256103,"data":"--------------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":152.743260671,"data":"  0  0.weight         conv1_1.weight     (64, 3, 3, 3)          OK\n"}
+,{"stream_name":"stdout","time":152.743264797,"data":"  1  0.bias           conv1_1.bias       (64,)                  OK\n"}
+,{"stream_name":"stdout","time":152.743268552,"data":"  2  2.weight         conv1_2.weight     (64, 64, 3, 3)         OK\n"}
+,{"stream_name":"stdout","time":152.743272313,"data":"  3  2.bias           conv1_2.bias       (64,)                  OK\n"}
+,{"stream_name":"stdout","time":152.743275904,"data":"  4  5.weight         conv2_1.weight     (128, 64, 3, 3)        OK\n"}
+,{"stream_name":"stdout","time":152.743295468,"data":"  5  5.bias           conv2_1.bias       (128,)                 OK\n"}
+,{"stream_name":"stdout","time":152.743300392,"data":"  6  7.weight         conv2_2.weight     (128, 128, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.743306875,"data":"  7  7.bias           conv2_2.bias       (128,)                 OK\n"}
+,{"stream_name":"stdout","time":152.743311371,"data":"  8  10.weight        conv3_1.weight     (256, 128, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.743314998,"data":"  9  10.bias          conv3_1.bias       (256,)                 OK\n"}
+,{"stream_name":"stdout","time":152.743318691,"data":" 10  12.weight        conv3_2.weight     (256, 256, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.743322451,"data":" 11  12.bias          conv3_2.bias       (256,)                 OK\n"}
+,{"stream_name":"stdout","time":152.743326055,"data":" 12  14.weight        conv3_3.weight     (256, 256, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.743329702,"data":" 13  14.bias          conv3_3.bias       (256,)                 OK\n"}
+,{"stream_name":"stdout","time":152.743333221,"data":" 14  17.weight        conv4_1.weight     (512, 256, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.743336756,"data":" 15  17.bias          conv4_1.bias       (512,)                 OK\n"}
+,{"stream_name":"stdout","time":152.74334044,"data":" 16  19.weight        conv4_2.weight     (512, 512, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.74334418,"data":" 17  19.bias          conv4_2.bias       (512,)                 OK\n"}
+,{"stream_name":"stdout","time":152.743348099,"data":" 18  21.weight        conv4_3.weight     (512, 512, 3, 3)       OK\n"}
+,{"stream_name":"stdout","time":152.743351617,"data":" 19  21.bias          conv4_3.bias       (512,)                 OK\n"}
+,{"stream_name":"stdout","time":152.743355192,"data":"\n"}
+,{"stream_name":"stdout","time":152.743358595,"data":"All 20 tensors are in the order init_vgg16 consumes them, with matching shapes.\n"}
+,{"stream_name":"stdout","time":152.743362219,"data":"\n"}
+,{"stream_name":"stdout","time":152.743365401,"data":"wrote model/vgg/vgg16.pth  (30.5 MB, 20 tensors)\n"}
+,{"stream_name":"stdout","time":152.743387001,"data":"Deviation to record: LRRNet ships no vgg16.pth, so these are torchvision's ImageNet VGG16 weights.\n"}
+,{"stream_name":"stdout","time":152.743390777,"data":"They are the standard source and match the positional layout the code expects, but the authors'\n"}
+,{"stream_name":"stdout","time":152.743394368,"data":"exact file was not published and cannot be verified against.\n"}
+,{"stream_name":"stdout","time":178.301929264,"data":"\n"}
+,{"stream_name":"stdout","time":178.301973058,"data":"train: 12,025 pairs at /kaggle/input/datasets/afradhossain/llvip-dataset/LLVIP/infrared/train\n"}
+,{"stream_name":"stdout","time":178.593419697,"data":"TNO test: 25 pairs\n"}
+,{"stream_name":"stdout","time":178.593457723,"data":"CrossFuse repo: /kaggle/input/datasets/mostafanada82/crossfuse-tier2-code/CrossFuse\n"}
+,{"stream_name":"stdout","time":178.593464784,"data":"\n"}
+,{"stream_name":"stdout","time":178.593483556,"data":"ready\n"}
+,{"stream_name":"stdout","time":181.374435472,"data":"seed 42 (1st)   weight-sum     267.13894641   first files ['020199.jpg', '030373.jpg', '010480.jpg', '020211.jpg']\n"}
+,{"stream_name":"stdout","time":181.374475888,"data":"seed 42 (2nd)   weight-sum     267.13894641   first files ['020199.jpg', '030373.jpg', '010480.jpg', '020211.jpg']\n"}
+,{"stream_name":"stdout","time":181.374482795,"data":"seed 43         weight-sum     214.06297642   first files ['030095.jpg', '030002.jpg', '020190.jpg', '020415.jpg']\n"}
+,{"stream_name":"stdout","time":181.374488243,"data":"\n"}
+,{"stream_name":"stdout","time":181.374493069,"data":"PASS\n"}
+,{"stream_name":"stdout","time":181.390829152,"data":"\n"}
+,{"stream_name":"stdout","time":181.390853781,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":181.390859501,"data":"nb6_seed42\n"}
+,{"stream_name":"stdout","time":181.390864965,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5215.337405165,"data":"train exit 0 after 83.9 min\n"}
+,{"stream_name":"stdout","time":5215.338261114,"data":"['[CONFIG] seed=42 train_num=12025 epochs=4 num_block=6', '[EPOCH] 0 seconds=1264.0 batches=1503', '[EPOCH] 1 seconds=1253.0 batches=1503', '[EPOCH] 2 seconds=1253.4 batches=1503', '[EPOCH] 3 seconds=1254.4 batches=1503']\n"}
+,{"stream_name":"stdout","time":5215.339040007,"data":"loss 92550.1 -\u003e 55869.3  (601 logged)\n"}
+,{"stream_name":"stdout","time":5233.246126723,"data":"loaded /kaggle/working/ckpts/nb6_seed42.model  (68,664 parameters, num_block=6)\n"}
+,{"stream_name":"stdout","time":5233.246171188,"data":"fused 25/25 pairs -\u003e /kaggle/working/fused/nb6_seed42\n"}
+,{"stream_name":"stdout","time":5233.448656519,"data":"loaded /kaggle/working/ckpts/nb6_seed42.model  (68,664 parameters, num_block=6)\n"}
+,{"stream_name":"stdout","time":5233.448691251,"data":"fused 25/25 pairs -\u003e /kaggle/working/fused/nb6_seed42\n"}
+,{"stream_name":"stdout","time":5298.11012151,"data":"evaluator package: /kaggle/input/datasets/mostafanada82/crossfuse-tier2-code/CrossFuse/utils\n"}
+,{"stream_name":"stdout","time":5298.110175246,"data":"\n"}
+,{"stream_name":"stdout","time":5298.110181335,"data":"nb6_seed42  (25 image pairs)\n"}
+,{"stream_name":"stdout","time":5298.1101856,"data":"          EN        MI        SD        SF        AG       VIF       SCD      Qabf      SSIM\n"}
+,{"stream_name":"stdout","time":5298.110190522,"data":"      6.9801    2.4444   44.4303    9.9388    3.7189    0.7123    1.2631    0.4144    0.8927\n"}
+,{"stream_name":"stdout","time":5298.110195105,"data":"appended to /kaggle/working/lrrnet_metrics.csv\n"}
+,{"stream_name":"stdout","time":5298.286217648,"data":"evaluator package: /kaggle/input/datasets/mostafanada82/crossfuse-tier2-code/CrossFuse/utils\n"}
+,{"stream_name":"stdout","time":5298.286245942,"data":"\n"}
+,{"stream_name":"stdout","time":5298.286250431,"data":"nb6_seed42  (25 image pairs)\n"}
+,{"stream_name":"stdout","time":5298.286254151,"data":"          EN        MI        SD        SF        AG       VIF       SCD      Qabf      SSIM\n"}
+,{"stream_name":"stdout","time":5298.286258071,"data":"      6.9801    2.4444   44.4303    9.9388    3.7189    0.7123    1.2631    0.4144    0.8927\n"}
+,{"stream_name":"stdout","time":5298.286262246,"data":"appended to /kaggle/working/lrrnet_metrics.csv\n"}
+,{"stream_name":"stdout","time":5298.286266042,"data":"nb6_seed42 done in 85.3 min\n"}
+,{"stream_name":"stdout","time":5298.287046982,"data":"\n"}
+,{"stream_name":"stdout","time":5298.287068015,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":5298.287073193,"data":"nb6_seed43\n"}
+,{"stream_name":"stdout","time":5298.287084234,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":10323.366243908,"data":"train exit 0 after 83.8 min\n"}
+,{"stream_name":"stdout","time":10323.367242371,"data":"['[CONFIG] seed=43 train_num=12025 epochs=4 num_block=6', '[EPOCH] 0 seconds=1253.2 batches=1503', '[EPOCH] 1 seconds=1254.0 batches=1503', '[EPOCH] 2 seconds=1254.5 batches=1503', '[EPOCH] 3 seconds=1254.3 batches=1503']\n"}
+,{"stream_name":"stdout","time":10323.367987442,"data":"loss 172651.3 -\u003e 58046.3  (601 logged)\n"}
+,{"stream_name":"stdout","time":10340.953897354,"data":"loaded /kaggle/working/ckpts/nb6_seed43.model  (68,664 parameters, num_block=6)\n"}
+,{"stream_name":"stdout","time":10340.953940385,"data":"fused 25/25 pairs -\u003e /kaggle/working/fused/nb6_seed43\n"}
+,{"stream_name":"stdout","time":10341.156817298,"data":"loaded /kaggle/working/ckpts/nb6_seed43.model  (68,664 parameters, num_block=6)\n"}
+,{"stream_name":"stdout","time":10341.156853862,"data":"fused 25/25 pairs -\u003e /kaggle/working/fused/nb6_seed43\n"}
+,{"stream_name":"stdout","time":10405.264595845,"data":"evaluator package: /kaggle/input/datasets/mostafanada82/crossfuse-tier2-code/CrossFuse/utils\n"}
+,{"stream_name":"stdout","time":10405.264644946,"data":"\n"}
+,{"stream_name":"stdout","time":10405.264649817,"data":"nb6_seed43  (25 image pairs)\n"}
+,{"stream_name":"stdout","time":10405.264653105,"data":"          EN        MI        SD        SF        AG       VIF       SCD      Qabf      SSIM\n"}
+,{"stream_name":"stdout","time":10405.26465644,"data":"      6.9569    2.3927   44.1824   10.4001    3.8658    0.7233    1.2503    0.4225    0.8939\n"}
+,{"stream_name":"stdout","time":10405.264659748,"data":"appended to /kaggle/working/lrrnet_metrics.csv\n"}
+,{"stream_name":"stdout","time":10405.431610922,"data":"evaluator package: /kaggle/input/datasets/mostafanada82/crossfuse-tier2-code/CrossFuse/utils\n"}
+,{"stream_name":"stdout","time":10405.431637906,"data":"\n"}
+,{"stream_name":"stdout","time":10405.431644878,"data":"nb6_seed43  (25 image pairs)\n"}
+,{"stream_name":"stdout","time":10405.431649618,"data":"          EN        MI        SD        SF        AG       VIF       SCD      Qabf      SSIM\n"}
+,{"stream_name":"stdout","time":10405.431654539,"data":"      6.9569    2.3927   44.1824   10.4001    3.8658    0.7233    1.2503    0.4225    0.8939\n"}
+,{"stream_name":"stdout","time":10405.431664068,"data":"appended to /kaggle/working/lrrnet_metrics.csv\n"}
+,{"stream_name":"stdout","time":10405.431668827,"data":"nb6_seed43 done in 85.1 min\n"}
+,{"stream_name":"stdout","time":10405.432470442,"data":"\n"}
+,{"stream_name":"stdout","time":10405.432490245,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":10405.432495817,"data":"nb6_seed44\n"}
+,{"stream_name":"stdout","time":10405.432499888,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":15453.614912868,"data":"train exit 0 after 84.1 min\n"}
+,{"stream_name":"stdout","time":15453.615827567,"data":"['[CONFIG] seed=44 train_num=12025 epochs=4 num_block=6', '[EPOCH] 0 seconds=1255.9 batches=1503', '[EPOCH] 1 seconds=1260.9 batches=1503', '[EPOCH] 2 seconds=1261.4 batches=1503', '[EPOCH] 3 seconds=1261.2 batches=1503']\n"}
+,{"stream_name":"stdout","time":15453.616582625,"data":"loss 163244.6 -\u003e 55452.9  (601 logged)\n"}
+,{"stream_name":"stdout","time":15471.154367232,"data":"loaded /kaggle/working/ckpts/nb6_seed44.model  (68,664 parameters, num_block=6)\n"}
+,{"stream_name":"stdout","time":15471.154444221,"data":"fused 25/25 pairs -\u003e /kaggle/working/fused/nb6_seed44\n"}
+,{"stream_name":"stdout","time":15471.357083554,"data":"loaded /kaggle/working/ckpts/nb6_seed44.model  (68,664 parameters, num_block=6)\n"}
+,{"stream_name":"stdout","time":15471.357123985,"data":"fused 25/25 pairs -\u003e /kaggle/working/fused/nb6_seed44\n"}
+,{"stream_name":"stdout","time":15537.108337698,"data":"evaluator package: /kaggle/input/datasets/mostafanada82/crossfuse-tier2-code/CrossFuse/utils\n"}
+,{"stream_name":"stdout","time":15537.108373328,"data":"\n"}
+,{"stream_name":"stdout","time":15537.108378852,"data":"nb6_seed44  (25 image pairs)\n"}
+,{"stream_name":"stdout","time":15537.108384175,"data":"          EN        MI        SD        SF        AG       VIF       SCD      Qabf      SSIM\n"}
+,{"stream_name":"stdout","time":15537.108389415,"data":"      7.0251    2.4525   45.8450   10.5261    3.8849    0.7238    1.1959    0.4083    0.9038\n"}
+,{"stream_name":"stdout","time":15537.108395005,"data":"appended to /kaggle/working/lrrnet_metrics.csv\n"}
+,{"stream_name":"stdout","time":15537.270915223,"data":"evaluator package: /kaggle/input/datasets/mostafanada82/crossfuse-tier2-code/CrossFuse/utils\n"}
+,{"stream_name":"stdout","time":15537.270950407,"data":"\n"}
+,{"stream_name":"stdout","time":15537.270954679,"data":"nb6_seed44  (25 image pairs)\n"}
+,{"stream_name":"stdout","time":15537.27095814,"data":"          EN        MI        SD        SF        AG       VIF       SCD      Qabf      SSIM\n"}
+,{"stream_name":"stdout","time":15537.270976093,"data":"      7.0251    2.4525   45.8450   10.5261    3.8849    0.7238    1.1959    0.4083    0.9038\n"}
+,{"stream_name":"stdout","time":15537.270982188,"data":"appended to /kaggle/working/lrrnet_metrics.csv\n"}
+,{"stream_name":"stdout","time":15537.270987343,"data":"nb6_seed44 done in 85.5 min\n"}
+,{"stream_name":"stdout","time":15537.288223624,"data":"3 runs\n"}
+,{"stream_name":"stdout","time":15537.288250321,"data":"\n"}
+,{"stream_name":"stdout","time":15537.288256511,"data":"metric         mean         std         min         max       range\n"}
+,{"stream_name":"stdout","time":15537.288261394,"data":"-------------------------------------------------------------------\n"}
+,{"stream_name":"stdout","time":15537.288266522,"data":"EN           6.9874      0.0347      6.9569      7.0251      0.0682\n"}
+,{"stream_name":"stdout","time":15537.288271481,"data":"MI           2.4299      0.0325      2.3927      2.4525      0.0599\n"}
+,{"stream_name":"stdout","time":15537.288297773,"data":"SD          44.8192      0.8969     44.1824     45.8450      1.6626\n"}
+,{"stream_name":"stdout","time":15537.288303423,"data":"SF          10.2883      0.3092      9.9388     10.5261      0.5873\n"}
+,{"stream_name":"stdout","time":15537.288321171,"data":"AG           3.8232      0.0908      3.7189      3.8849      0.1660\n"}
+,{"stream_name":"stdout","time":15537.288325662,"data":"VIF          0.7198      0.0065      0.7123      0.7238      0.0115\n"}
+,{"stream_name":"stdout","time":15537.288330014,"data":"SCD          1.2364      0.0357      1.1959      1.2631      0.0672\n"}
+,{"stream_name":"stdout","time":15537.288333819,"data":"Qabf         0.4151      0.0071      0.4083      0.4225      0.0142\n"}
+,{"stream_name":"stdout","time":15537.288336947,"data":"SSIM         0.8968      0.0061      0.8927      0.9038      0.0111\n"}
+,{"stream_name":"stdout","time":15537.288340268,"data":"\n"}
+,{"stream_name":"stdout","time":15537.288344795,"data":"sigma_LRRNet (n=3, sample std) = {'EN': np.float64(0.03467), 'MI': np.float64(0.03248), 'SD': np.float64(0.89693), 'SF': np.float64(0.30919), 'AG': np.float64(0.09082), 'VIF': np.float64(0.00649), 'SCD': np.float64(0.0357), 'Qabf': np.float64(0.00714), 'SSIM': np.float64(0.00609)}\n"}
+,{"stream_name":"stdout","time":15537.288348801,"data":"\n"}
+,{"stream_name":"stdout","time":15537.288351989,"data":"This is a genuine sample standard deviation, not a range-based estimate. Every later\n"}
+,{"stream_name":"stdout","time":15537.288355424,"data":"judgement about Table IV uses THIS number -- CrossFuse's sigma is retired for LRRNet.\n"}
+,{"stream_name":"stderr","time":15540.390290677,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":15540.390334975,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":15540.544669352,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":15540.544695292,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":15541.185396021,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":15541.518052459,"data":"[NbConvertApp] Writing 24030 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":15543.915389581,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15544.739180455,"data":"[NbConvertApp] Writing 325816 bytes to __results__.html\n"}
+]
