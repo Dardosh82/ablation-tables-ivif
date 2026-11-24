@@ -290,6 +290,31 @@ def main():
     print(f"\nmultiplicity: 9 tests at 5 % expect ~0.45 false positives. "
           f"{'A single cell either way is not a result.' if k in (0, 1, 8, 9) else ''}")
 
+    # Added 2026-11-25 for reviewers (an external review asked to see the correction step itself): exact Welch
+    # p-values and Holm-adjusted p across the nine metrics. The registered reading above is unchanged.
+    try:
+        from scipy import stats
+    except ImportError:
+        print("\n(scipy not installed: Holm table skipped)")
+        return
+    rows = []
+    for m in METRICS:
+        a = [t[m] for _, t in arms["trained"]]
+        b = [t[m] for _, t in arms["untrained"]]
+        _, sa, _, sb, tt = welch(a, b)
+        va, vb = sa ** 2 / len(a), sb ** 2 / len(b)
+        df = (va + vb) ** 2 / (va ** 2 / (len(a) - 1) + vb ** 2 / (len(b) - 1)) if va + vb > 0 else float("inf")
+        rows.append([m, tt, df, 2 * stats.t.sf(abs(tt), df)])
+    order = sorted(range(len(rows)), key=lambda i: rows[i][3])
+    running = 0.0
+    for rank, i in enumerate(order):
+        running = max(running, min(1.0, (len(rows) - rank) * rows[i][3]))
+        rows[i].append(running)
+    print(f"\n{'metric':>6}  {'t':>8}  {'Welch df':>8}  {'p':>10}  {'Holm p':>10}")
+    for m, tt, df, p, ph in rows:
+        print(f"{m:>6}  {tt:>8.2f}  {df:>8.2f}  {p:>10.2e}  {ph:>10.2e}  {'survives' if ph < 0.05 else ''}")
+    print(f"{sum(r[4] < 0.05 for r in rows)} of 9 survive Holm at 5 %")
+
 
 if __name__ == "__main__":
     main()
