@@ -1,0 +1,18 @@
+{
+  "id": "mostafanada82/lrrnet-run20-cpu-b",
+  "title": "LRRNet_Run20_cpu_b",
+  "code_file": "lrrnet-run20-cpu-b.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "mostafanada82/crossfuse-testsets",
+    "mostafanada82/crossfuse-tier2-code",
+    "mostafanada82/lrrnet-replication-scripts",
+    "mostafanada82/lrrnet-run20-ckpts"
+  ],
+  "kernel_sources": [],
+  "competition_sources": []
+}

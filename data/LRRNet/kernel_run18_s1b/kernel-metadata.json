@@ -1,0 +1,25 @@
+{
+  "id": "mostafanada82/lrrnet-run18-s1b",
+  "title": "LRRNet_Run18_s1b",
+  "code_file": "lrrnet-run18-s1b.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "mostafanada82/crossfuse-testsets",
+    "mostafanada82/crossfuse-tier2-code",
+    "afradhossain/llvip-dataset",
+    "mostafanada82/lrrnet-run18-scripts"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "machine_shape": "NvidiaTeslaT4"
+}

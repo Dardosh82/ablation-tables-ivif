@@ -1,0 +1,23 @@
+{
+  "id": "mostafanada82/lrrnet-run20-score",
+  "title": "LRRNet_run20_score",
+  "code_file": "lrrnet-run20-score.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_internet": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "keywords": [],
+  "dataset_sources": [
+    "mostafanada82/crossfuse-testsets",
+    "mostafanada82/crossfuse-tier2-code",
+    "mostafanada82/lrrnet-replication-scripts"
+  ],
+  "kernel_sources": [
+    "mostafanada82/lrrnet-run20-fuse"
+  ],
+  "competition_sources": [],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461"
+}

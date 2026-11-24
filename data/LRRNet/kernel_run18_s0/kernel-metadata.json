@@ -1,0 +1,17 @@
+{
+  "id": "mostafanada82/lrrnet-run18-s0",
+  "title": "LRRNet_Run18_S0",
+  "code_file": "lrrnet-run18-s0.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "mostafanada82/lrrnet-replication-scripts",
+    "afradhossain/llvip-dataset",
+    "mostafanada82/lrrnet-run16-ckpts"
+  ],
+  "kernel_sources": [],
+  "competition_sources": []
+}

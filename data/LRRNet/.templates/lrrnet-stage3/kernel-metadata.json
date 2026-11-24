@@ -1,0 +1,26 @@
+{
+  "id": "mostafanada82/lrrnet-stage3",
+  "id_no": 132901459,
+  "title": "lrrnet-stage3",
+  "code_file": "lrrnet-stage3.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "mostafanada82/crossfuse-testsets",
+    "mostafanada82/crossfuse-tier2-code",
+    "afradhossain/llvip-dataset",
+    "mostafanada82/lrrnet-replication-scripts"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "machine_shape": "NvidiaTeslaT4"
+}

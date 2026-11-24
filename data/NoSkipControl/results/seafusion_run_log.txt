@@ -1,0 +1,36 @@
+seafusion | device cpu | torch 2.2.2+cpu | 25 TNO pairs
+
+KILL CRITERIA
+  released r to IR 0.359, to VI 0.673 (both must be >= 0.30)
+  all five passed
+
+RESEMBLANCE (mean Pearson r over 25 pairs)
+  released  VI 0.673  IR 0.359  MEAN 0.909  MAX 0.976   winner MAX
+  U42       VI -0.136  IR -0.046  MEAN -0.140  MAX -0.126   winner IR
+  U43       VI -0.132  IR 0.067  MEAN -0.077  MAX -0.041   winner IR
+  U44       VI -0.024  IR 0.093  MEAN 0.053  MAX 0.045   winner IR
+  U45       VI -0.014  IR -0.076  MEAN -0.065  MAX -0.060   winner VI
+  U46       VI -0.302  IR 0.069  MEAN -0.207  MAX -0.209   winner IR
+
+UNTRAINED (mean of 5 seeds) vs RELEASED -- one-sample t, df = 4, |t| > 2.776
+  EN    untrained    4.6475 +-0.4348   released    7.1036   t =   -12.63  *
+  SD    untrained   11.3688 +-1.8581   released   44.1993   t =   -39.51  *
+  SF    untrained   11.3755 +-1.1996   released   12.4118   t =    -1.93
+  AG    untrained    3.0344 +-0.4683   released    4.9398   t =    -9.10  *
+  MI    untrained    0.3184 +-0.0677   released    1.9974   t =   -55.41  *
+  SCD   untrained    0.4631 +-0.0437   released    1.7174   t =   -64.13  *
+  VIF   untrained    0.0206 +-0.0065   released    0.6890   t =  -229.75  *
+  Qabf  untrained    0.1162 +-0.0217   released    0.5065   t =   -40.17  *
+  SSIM  untrained   -0.0136 +-0.0220   released    0.9879   t =  -101.67  *
+
+READING (PREREGISTRATION.md, committed 8276c46 before this script existed)
+  copy criterion: VI most-resembled in 1 of 5 seeds, mean r to VI -0.122 -> NOT MET
+  inversion criterion: MI t = -55.41, VIF t = -229.75 -> NOT MET
+  metrics that separate untrained from released (either direction): 8 of 9 ['EN', 'SD', 'AG', 'MI', 'SCD', 'VIF', 'Qabf', 'SSIM']
+  N1 CONSISTENT (seafusion): no copy and no inversion -- the inversion follows the input skip.
+
+real	16m25.735s
+user	0m1.561s
+sys	0m3.811s
+
+[exited with code 0]

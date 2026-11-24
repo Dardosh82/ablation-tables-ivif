@@ -1,0 +1,23 @@
+comparison,metric,effect_sigma,ci_low,ci_high,n_alt,n_ref
+"Run 17, TNO: tied d8 - untied d8",SF,2.03,1.18,2.881,12,12
+"Run 17, TNO: tied d8 - untied d8",AG,1.589,0.731,2.447,12,12
+"Run 17, TNO: tied d8 - untied d8",VIF,1.847,0.998,2.696,12,12
+"Run 17, TNO: tied d8 - untied d8",SCD,2.23,1.37,3.09,12,12
+"Run 17b, RoadScene: tied d8 - untied d8",SF,1.945,1.093,2.797,12,12
+"Run 17b, RoadScene: tied d8 - untied d8",AG,1.617,0.748,2.485,12,12
+"Run 17b, RoadScene: tied d8 - untied d8",VIF,2.66,1.803,3.517,12,12
+"Run 17b, RoadScene: tied d8 - untied d8",SCD,2.607,1.724,3.49,12,12
+"Run 20, TNO: tied d8 - published d4",EN,-0.582,-1.533,0.369,12,8
+"Run 20, TNO: tied d8 - published d4",MI,0.968,-0.163,2.1,12,8
+"Run 20, TNO: tied d8 - published d4",SD,-1.83,-2.897,-0.762,12,8
+"Run 20, TNO: tied d8 - published d4",VIF,1.771,0.636,2.907,12,8
+"Run 20, TNO: tied d8 - published d4",SCD,0.526,-0.543,1.596,12,8
+"Run 20, TNO: tied d8 - published d4",Qabf,1.415,0.402,2.427,12,8
+"Run 20, TNO: tied d8 - published d4",SSIM,1.858,0.769,2.948,12,8
+"Run 20, RoadScene: tied d8 - published d4",EN,2.179,1.263,3.095,12,8
+"Run 20, RoadScene: tied d8 - published d4",MI,1.136,-0.005,2.278,12,8
+"Run 20, RoadScene: tied d8 - published d4",SD,-0.336,-1.227,0.555,12,8
+"Run 20, RoadScene: tied d8 - published d4",VIF,1.621,0.573,2.669,12,8
+"Run 20, RoadScene: tied d8 - published d4",SCD,1.067,-0.089,2.223,12,8
+"Run 20, RoadScene: tied d8 - published d4",Qabf,1.978,0.83,3.126,12,8
+"Run 20, RoadScene: tied d8 - published d4",SSIM,2.604,1.367,3.841,12,8

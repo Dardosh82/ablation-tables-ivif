@@ -11,6 +11,8 @@ from an explicit manifest, so it contains only what is listed below.
 | `scripts/crossfuse/` | The CrossFuse positive control, the untrained-network mechanism, the passthrough baselines and the σ-estimator audit |
 | `scripts/cddfuse/` | The CDDFuse test of the residual-copy mechanism, with its log and summary |
 | `results/` | The numbers of record, with per-run accounting |
+| `data/` | The recorded metrics of every experiment, per run, per image where recorded (index: `data/INDEX.md`) |
+| `registrations/` | The pre-registration of each confirmatory run, written before it |
 | `notebooks/` | The Kaggle cells each run was launched from |
 | `MANIFEST.sha256` | Checksums for every file above |
 
@@ -42,8 +44,10 @@ commit above after cloning to rebuild the same code.
 
 **What re-running needs.** Trained checkpoints and image data are not included. The datasets are public
 (TNO, RoadScene, MSRS, LLVIP, M3FD); training needs a GPU (each LRRNet run is about one GPU-hour on a T4,
-each CrossFuse run about three). Every number in the paper can be checked without training, from the
-per-run metrics in `results/` and `scripts/`.
+each CrossFuse run about three). The recorded metrics of every experiment are in `data/` (index: `data/INDEX.md`) and
+each confirmatory run's pre-registration in `registrations/`, so the numbers can be checked without
+training. Not here: checkpoints, fused images, datasets, and the exact versions of packages other
+than torch, which were not recorded.
 
 ## Reproducing a result
 

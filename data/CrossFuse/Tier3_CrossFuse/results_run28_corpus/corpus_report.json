@@ -1,0 +1,17 @@
+{
+  "released_sha256": "94522b6e5fba038c179528ed0a24a1f7351b19ec98255e3bdd0425337fa2eef8",
+  "released_vs_k0_max_abs": 0.0,
+  "m3fd_pairs": 300,
+  "m3fd_sha256": "fcdf89a4b379a5da0257ef2497bd9702fac2ef145dcbdc0ac2c6621e6bfe5ef8",
+  "pool": 5729,
+  "drawn": 800,
+  "rng_seed": 2028,
+  "dist_pool_mean": 121.78632238416633,
+  "dist_drawn_mean": 121.88142892144873,
+  "dist_top800_mean": 23.348119646048502,
+  "dist_top1000_mean": 26.907605630782506,
+  "total": 1718,
+  "roadscene_copy_max_abs": 0.0,
+  "overlap_with_released_aux": 123,
+  "rand_sha256": "85e90ec2e6ca0be13dbac33ff3af4ab539ad932b156cd58919b483ef561fb84c"
+}

@@ -1,0 +1,3 @@
+seed,epochs,num_block,tied,train_num,exit,minutes,loss_first,loss_last,logged
+45,8,4,0,12025,0,127.4,156614.2,58380.4,1202
+46,8,4,0,12025,0,126.5,134667.6,54145.5,1202
