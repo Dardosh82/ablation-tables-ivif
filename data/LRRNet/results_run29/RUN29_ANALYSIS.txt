@@ -1,0 +1,83 @@
+Run 29 -- hierarchical bootstrap (runs x images), B = 10,000, seed 20261125
+
+F5  CrossFuse positive control, TNO, untrained (5) minus trained (5), 25 images
+  F5 untrained - trained       TNO       EN    diff -0.1648 (-4.78 sigma)  95% [-0.2896, -0.0489]  runs' share of variance 11%  -> HOLDS OVER IMAGES
+  F5 untrained - trained       TNO       MI    diff +1.177 (+9.16 sigma)  95% [+0.9005, +1.46]  runs' share of variance 26%  -> HOLDS OVER IMAGES
+  F5 untrained - trained       TNO       SD    diff -2.958 (-2.48 sigma)  95% [-7.404, +1.836]  runs' share of variance 8%  -> RUNS ONLY
+  F5 untrained - trained       TNO       SF    diff -3.663 (-10.33 sigma)  95% [-4.68, -2.812]  runs' share of variance 18%  -> HOLDS OVER IMAGES
+  F5 untrained - trained       TNO       AG    diff -1.385 (-9.51 sigma)  95% [-1.683, -1.114]  runs' share of variance 32%  -> HOLDS OVER IMAGES
+  F5 untrained - trained       TNO       VIF   diff +0.1607 (+8.33 sigma)  95% [+0.09128, +0.2352]  runs' share of variance 9%  -> HOLDS OVER IMAGES
+  F5 untrained - trained       TNO       SCD   diff -0.6142 (-3.85 sigma)  95% [-0.898, -0.3581]  runs' share of variance 43%  -> HOLDS OVER IMAGES
+  F5 untrained - trained       TNO       Qabf  diff -0.01381 (-2.14 sigma)  95% [-0.05338, +0.02406]  runs' share of variance 4%  -> RUNS ONLY
+  F5 untrained - trained       TNO       SSIM  diff -0.04831 (-3.00 sigma)  95% [-0.09568, -0.003441]  runs' share of variance 15%  -> HOLDS OVER IMAGES
+
+integrity: 248 re-scored checkpoint means compared with the record, 0 differ
+
+F1  tied d8 minus untied d8, seeds 62-73
+  F1 tied-untied d8            TNO       SF    diff +0.4982 (+2.03 sigma)  95% [+0.2526, +0.7559]  runs' share of variance 60%  -> HOLDS OVER IMAGES
+  F1 tied-untied d8            TNO       AG    diff +0.1847 (+1.59 sigma)  95% [+0.07392, +0.3073]  runs' share of variance 62%  -> HOLDS OVER IMAGES
+  F1 tied-untied d8            TNO       VIF   diff +0.05948 (+1.85 sigma)  95% [+0.03298, +0.08538]  runs' share of variance 92%  -> HOLDS OVER IMAGES
+  F1 tied-untied d8            TNO       SCD   diff +0.09604 (+2.23 sigma)  95% [+0.04546, +0.153]  runs' share of variance 39%  -> HOLDS OVER IMAGES
+  F1 tied-untied d8            RoadScene SF    diff +0.5236 (+1.94 sigma)  95% [+0.2604, +0.8027]  runs' share of variance 59%  -> HOLDS OVER IMAGES
+  F1 tied-untied d8            RoadScene AG    diff +0.1491 (+1.62 sigma)  95% [+0.05209, +0.2494]  runs' share of variance 53%  -> HOLDS OVER IMAGES
+  F1 tied-untied d8            RoadScene VIF   diff +0.06849 (+2.66 sigma)  95% [+0.04819, +0.08832]  runs' share of variance 96%  -> HOLDS OVER IMAGES
+  F1 tied-untied d8            RoadScene SCD   diff +0.148 (+2.61 sigma)  95% [+0.1039, +0.1975]  runs' share of variance 88%  -> HOLDS OVER IMAGES
+
+F2  tied d8 (seeds 74-85) minus published d4 (seeds 42-49)
+  F2 tied d8-published         TNO       VIF   diff +0.04337 (+1.77 sigma)  95% [+0.02045, +0.06796]  runs' share of variance 92%  -> HOLDS OVER IMAGES
+  F2 tied d8-published         TNO       Qabf  diff +0.01858 (+1.41 sigma)  95% [+0.006312, +0.03194]  runs' share of variance 83%  -> HOLDS OVER IMAGES
+  F2 tied d8-published         TNO       SSIM  diff +0.02023 (+1.86 sigma)  95% [+0.007344, +0.03337]  runs' share of variance 61%  -> HOLDS OVER IMAGES
+  F2 tied d8-published         TNO       SD    diff -1.591 (-1.83 sigma)  95% [-2.717, -0.5944]  runs' share of variance 59%  -> HOLDS OVER IMAGES
+  F2 tied d8-published         RoadScene EN    diff +0.03412 (+2.18 sigma)  95% [+0.0129, +0.05764]  runs' share of variance 36%  -> HOLDS OVER IMAGES
+  F2 tied d8-published         RoadScene VIF   diff +0.04576 (+1.62 sigma)  95% [+0.02084, +0.07217]  runs' share of variance 96%  -> HOLDS OVER IMAGES
+  F2 tied d8-published         RoadScene Qabf  diff +0.01313 (+1.98 sigma)  95% [+0.006083, +0.01966]  runs' share of variance 87%  -> HOLDS OVER IMAGES
+  F2 tied d8-published         RoadScene SSIM  diff +0.04503 (+2.60 sigma)  95% [+0.02637, +0.06233]  runs' share of variance 92%  -> HOLDS OVER IMAGES
+
+F3  Table IV at twenty seeds (42-61), setting minus the published 4
+  F3 nb2-nb4                   TNO       EN    diff +0.005373 (+0.22 sigma)  95% [-0.01692, +0.02642]  runs' share of variance 54%  -> null, unchanged
+  F3 nb2-nb4                   TNO       MI    diff -0.006759 (-0.09 sigma)  95% [-0.05601, +0.04189]  runs' share of variance 89%  -> null, unchanged
+  F3 nb2-nb4                   TNO       SD    diff -0.4133 (-0.48 sigma)  95% [-1.092, +0.2094]  runs' share of variance 68%  -> null, unchanged
+  F3 nb2-nb4                   TNO       SF    diff +0.2096 (+0.77 sigma)  95% [+0.0257, +0.4201]  runs' share of variance 73%  -> exploratory: interval excludes zero
+  F3 nb2-nb4                   TNO       AG    diff +0.07513 (+0.64 sigma)  95% [-0.003621, +0.1634]  runs' share of variance 78%  -> null, unchanged
+  F3 nb2-nb4                   TNO       VIF   diff +0.01725 (+0.69 sigma)  95% [+0.001909, +0.03297]  runs' share of variance 97%  -> exploratory: interval excludes zero
+  F3 nb2-nb4                   TNO       SCD   diff +0.03347 (+0.82 sigma)  95% [+0.006232, +0.06521]  runs' share of variance 75%  -> exploratory: interval excludes zero
+  F3 nb2-nb4                   TNO       Qabf  diff +0.007974 (+0.71 sigma)  95% [+0.0008678, +0.01594]  runs' share of variance 85%  -> exploratory: interval excludes zero
+  F3 nb2-nb4                   TNO       SSIM  diff +0.00339 (+0.34 sigma)  95% [-0.003609, +0.01071]  runs' share of variance 79%  -> null, unchanged
+  F3 nb6-nb4                   TNO       EN    diff +0.006092 (+0.22 sigma)  95% [-0.01592, +0.02807]  runs' share of variance 66%  -> null, unchanged
+  F3 nb6-nb4                   TNO       MI    diff -0.002788 (-0.03 sigma)  95% [-0.05714, +0.05274]  runs' share of variance 88%  -> null, unchanged
+  F3 nb6-nb4                   TNO       SD    diff +0.5153 (+0.50 sigma)  95% [-0.2271, +1.322]  runs' share of variance 68%  -> null, unchanged
+  F3 nb6-nb4                   TNO       SF    diff -0.1618 (-0.62 sigma)  95% [-0.3394, +0.01191]  runs' share of variance 89%  -> null, unchanged
+  F3 nb6-nb4                   TNO       AG    diff -0.07636 (-0.72 sigma)  95% [-0.1474, -0.006941]  runs' share of variance 86%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   TNO       VIF   diff -0.02196 (-0.88 sigma)  95% [-0.03759, -0.006549]  runs' share of variance 96%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   TNO       SCD   diff -0.033 (-0.68 sigma)  95% [-0.06863, -0.0009449]  runs' share of variance 80%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   TNO       Qabf  diff -0.007924 (-0.72 sigma)  95% [-0.01612, -0.0006864]  runs' share of variance 80%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   TNO       SSIM  diff -0.002566 (-0.24 sigma)  95% [-0.01021, +0.004831]  runs' share of variance 83%  -> null, unchanged
+  F3 nb2-nb4                   RoadScene EN    diff +0.02165 (+0.95 sigma)  95% [+0.006524, +0.03819]  runs' share of variance 79%  -> HOLDS OVER IMAGES
+  F3 nb2-nb4                   RoadScene MI    diff +0.02102 (+0.37 sigma)  95% [-0.01463, +0.05718]  runs' share of variance 93%  -> null, unchanged
+  F3 nb2-nb4                   RoadScene SD    diff +0.3959 (+0.51 sigma)  95% [-0.1144, +0.9156]  runs' share of variance 87%  -> null, unchanged
+  F3 nb2-nb4                   RoadScene SF    diff +0.2207 (+0.85 sigma)  95% [+0.0535, +0.4063]  runs' share of variance 83%  -> exploratory: interval excludes zero
+  F3 nb2-nb4                   RoadScene AG    diff +0.03848 (+0.40 sigma)  95% [-0.02352, +0.1054]  runs' share of variance 85%  -> null, unchanged
+  F3 nb2-nb4                   RoadScene VIF   diff +0.02261 (+0.89 sigma)  95% [+0.006863, +0.03795]  runs' share of variance 99%  -> exploratory: interval excludes zero
+  F3 nb2-nb4                   RoadScene SCD   diff +0.04018 (+0.98 sigma)  95% [+0.01538, +0.06637]  runs' share of variance 97%  -> HOLDS OVER IMAGES
+  F3 nb2-nb4                   RoadScene Qabf  diff +0.004984 (+0.79 sigma)  95% [+0.0009889, +0.008811]  runs' share of variance 93%  -> exploratory: interval excludes zero
+  F3 nb2-nb4                   RoadScene SSIM  diff +0.01287 (+0.77 sigma)  95% [+0.002645, +0.02306]  runs' share of variance 96%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   RoadScene EN    diff -0.01297 (-0.52 sigma)  95% [-0.03093, +0.00534]  runs' share of variance 75%  -> null, unchanged
+  F3 nb6-nb4                   RoadScene MI    diff -0.0186 (-0.30 sigma)  95% [-0.05854, +0.02182]  runs' share of variance 94%  -> null, unchanged
+  F3 nb6-nb4                   RoadScene SD    diff -0.3259 (-0.40 sigma)  95% [-0.9341, +0.2708]  runs' share of variance 73%  -> null, unchanged
+  F3 nb6-nb4                   RoadScene SF    diff -0.2252 (-0.85 sigma)  95% [-0.4088, -0.04434]  runs' share of variance 82%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   RoadScene AG    diff -0.07055 (-0.78 sigma)  95% [-0.136, -0.004235]  runs' share of variance 75%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   RoadScene VIF   diff -0.02665 (-1.01 sigma)  95% [-0.04294, -0.009802]  runs' share of variance 99%  -> HOLDS OVER IMAGES
+  F3 nb6-nb4                   RoadScene SCD   diff -0.04603 (-0.92 sigma)  95% [-0.07796, -0.01524]  runs' share of variance 95%  -> HOLDS OVER IMAGES
+  F3 nb6-nb4                   RoadScene Qabf  diff -0.004176 (-0.68 sigma)  95% [-0.008182, -0.0003752]  runs' share of variance 93%  -> exploratory: interval excludes zero
+  F3 nb6-nb4                   RoadScene SSIM  diff -0.007655 (-0.42 sigma)  95% [-0.01913, +0.003649]  runs' share of variance 97%  -> null, unchanged
+
+F4  LRRNet positive control, trained (42-61) minus untrained (400-419), TNO
+  F4 trained-untrained         TNO       EN    diff +0.6349 (+2.54 sigma)  95% [+0.4357, +0.8284]  runs' share of variance 61%  -> HOLDS OVER IMAGES
+  F4 trained-untrained         TNO       MI    diff +1.13 (+5.01 sigma)  95% [+0.9028, +1.356]  runs' share of variance 37%  -> HOLDS OVER IMAGES
+  F4 trained-untrained         TNO       SD    diff +13.57 (+2.30 sigma)  95% [+8.613, +18.76]  runs' share of variance 51%  -> HOLDS OVER IMAGES
+  F4 trained-untrained         TNO       SF    diff +1.448 (+0.75 sigma)  95% [-0.008297, +2.804]  runs' share of variance 72%  -> null, unchanged
+  F4 trained-untrained         TNO       AG    diff +0.4705 (+0.76 sigma)  95% [-0.02223, +0.9572]  runs' share of variance 60%  -> null, unchanged
+  F4 trained-untrained         TNO       VIF   diff +0.6243 (+7.78 sigma)  95% [+0.5432, +0.7068]  runs' share of variance 36%  -> HOLDS OVER IMAGES
+  F4 trained-untrained         TNO       SCD   diff +0.9202 (+2.59 sigma)  95% [+0.6058, +1.231]  runs' share of variance 47%  -> HOLDS OVER IMAGES
+  F4 trained-untrained         TNO       Qabf  diff +0.2546 (+16.38 sigma)  95% [+0.2129, +0.2971]  runs' share of variance 5%  -> HOLDS OVER IMAGES
+  F4 trained-untrained         TNO       SSIM  diff +0.8857 (+4.28 sigma)  95% [+0.7506, +1.018]  runs' share of variance 87%  -> HOLDS OVER IMAGES

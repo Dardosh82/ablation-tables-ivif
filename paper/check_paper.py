@@ -248,6 +248,15 @@ if True:
                         _zl = [w for w in _ids if w in _z.read(_n).decode("utf-8", "ignore")]
                         if _zl:
                             fail(f"manuscript_anonymised.zip:{_n} names the authors: {_zl}")
+                # 2026-11-26: the zip once carried a 50-page PDF while the submission PDF had 54 -- every file in the
+                # zip must be byte-identical to the one beside paper_eswa.tex
+                for _n in _z.namelist():
+                    _disk = os.path.join(os.path.dirname(_tex), *_n.split("/"))
+                    if _n.endswith("/") or not os.path.isfile(_disk):
+                        continue
+                    if _z.read(_n) != open(_disk, "rb").read():
+                        fail(f"manuscript_anonymised.zip:{_n} differs from the file on disk -- run build_pdfs.py, "
+                             "which re-zips")
         else:
             warn("eswa_submission/manuscript_anonymised.zip not built -- re-run build_paper.py")
         _pdf = _tex[:-4] + ".pdf"

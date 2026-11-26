@@ -1,0 +1,377 @@
+====================================================================================================
+A. Tier 3 scripts: output lines that change when sigma_3 is replaced by sigma_8
+====================================================================================================
+
+--- analyse_tier3.py: 216 lines, 55 differ
+  s3: MI        2.5478    2.3910 |    2.6608   +0.2697    4.7  **REAL** |    2.4145   +0.0235    0.4     noise |    2.3178   -0.0732    1.3     noise |
+  s8: MI        2.5478    2.3910 |    2.6608   +0.2697    3.7  **REAL** |    2.4145   +0.0235    0.3     noise |    2.3178   -0.0732    1.0     noise |
+  s3: SD       52.4027   52.4265 |   51.6620   -0.7645    1.1     noise |   52.9798   +0.5533    0.8     noise |   51.3479   -1.0786    1.6     noise |
+  s8: SD       52.4027   52.4265 |   51.6620   -0.7645    0.8     noise |   52.9798   +0.5533    0.6     noise |   51.3479   -1.0786    1.2     noise |
+  s3: SF       18.0860   18.4380 |   17.7052   -0.7328    5.7  **REAL** |   18.3084   -0.1296    1.0     noise |   18.4364   -0.0016    0.0     noise |
+  s8: SF       18.0860   18.4380 |   17.7052   -0.7328    3.5  **REAL** |   18.3084   -0.1296    0.6     noise |   18.4364   -0.0016    0.0     noise |
+  s3: AG        6.9031    7.0416 |    6.6538   -0.3878    8.0  **REAL** |    7.0524   +0.0108    0.2     noise |    7.0104   -0.0313    0.6     noise |
+  s8: AG        6.9031    7.0416 |    6.6538   -0.3878    5.0  **REAL** |    7.0524   +0.0108    0.1     noise |    7.0104   -0.0313    0.4     noise |
+  s3: VIF       0.7083    0.6857 |    0.7379   +0.0522   15.4  **REAL** |    0.6888   +0.0031    0.9     noise |    0.6635   -0.0222    6.6  **REAL** |
+  s8: VIF       0.7083    0.6857 |    0.7379   +0.0522    5.6  **REAL** |    0.6888   +0.0031    0.3     noise |    0.6635   -0.0222    2.4  marginal |
+  s3: SCD       1.5767    1.6042 |    1.6478   +0.0437    0.7     noise |    1.5704   -0.0338    0.5     noise |    1.5744   -0.0298    0.5     noise |
+  s8: SCD       1.5767    1.6042 |    1.6478   +0.0437    0.5     noise |    1.5704   -0.0338    0.4     noise |    1.5744   -0.0298    0.3     noise |
+  s3: Qabf      0.5933    0.5842 |    0.5939   +0.0097    4.4  **REAL** |    0.5843   +0.0001    0.0     noise |    0.5761   -0.0081    3.6  **REAL** |
+  s8: Qabf      0.5933    0.5842 |    0.5939   +0.0097    2.2  marginal |    0.5843   +0.0001    0.0     noise |    0.5761   -0.0081    1.8     noise |
+  s3: SSIM      0.9646    0.9648 |    0.9693   +0.0045    0.5     noise |    0.9644   -0.0004    0.0     noise |    0.9659   +0.0011    0.1     noise |
+  s8: SSIM      0.9646    0.9648 |    0.9693   +0.0045    0.7     noise |    0.9644   -0.0004    0.1     noise |    0.9659   +0.0011    0.2     noise |
+  s3: EN        7.1933    7.1759 |    7.1243   -0.0516    3.1  **REAL** |    7.1506   -0.0253    1.5     noise |    7.1408   -0.0351    2.1  marginal |
+  s8: EN        7.1933    7.1759 |    7.1243   -0.0516    1.3     noise |    7.1506   -0.0253    0.6     noise |    7.1408   -0.0351    0.9     noise |
+  s3: MI        2.1618    2.0707 |    2.2951   +0.2244   43.4  **REAL** |    2.0967   +0.0260    5.0  **REAL** |    1.9866   -0.0841   16.3  **REAL** |
+  s8: MI        2.1618    2.0707 |    2.2951   +0.2244    4.2  **REAL** |    2.0967   +0.0260    0.5     noise |    1.9866   -0.0841    1.6     noise |
+  s3: SD       48.6891   48.0889 |   47.7139   -0.3749    1.0     noise |   48.0094   -0.0795    0.2     noise |   46.3950   -1.6939    4.7  **REAL** |
+  s8: SD       48.6891   48.0889 |   47.7139   -0.3749    0.9     noise |   48.0094   -0.0795    0.2     noise |   46.3950   -1.6939    4.2  **REAL** |
+  s3: SF       14.3436   14.5916 |   14.2579   -0.3337    1.2     noise |   14.3158   -0.2758    1.0     noise |   14.0305   -0.5612    2.0     noise |
+  s8: SF       14.3436   14.5916 |   14.2579   -0.3337    1.5     noise |   14.3158   -0.2758    1.3     noise |   14.0305   -0.5612    2.6  marginal |
+  s3: AG        5.3552    5.4239 |    5.1411   -0.2828    3.6  **REAL** |    5.3383   -0.0856    1.1     noise |    5.3004   -0.1234    1.6     noise |
+  s8: AG        5.3552    5.4239 |    5.1411   -0.2828    3.2  **REAL** |    5.3383   -0.0856    1.0     noise |    5.3004   -0.1234    1.4     noise |
+  s3: VIF       0.7640    0.7423 |    0.7797   +0.0373   23.5  **REAL** |    0.7492   +0.0068    4.3  **REAL** |    0.7259   -0.0164   10.4  **REAL** |
+  s8: VIF       0.7640    0.7423 |    0.7797   +0.0373    6.1  **REAL** |    0.7492   +0.0068    1.1     noise |    0.7259   -0.0164    2.7  marginal |
+  s3: SCD       1.6432    1.6816 |    1.5328   -0.1488    4.0  **REAL** |    1.5924   -0.0891    2.4  marginal |    1.7203   +0.0388    1.0     noise |
+  s8: SCD       1.6432    1.6816 |    1.5328   -0.1488    2.4  marginal |    1.5924   -0.0891    1.5     noise |    1.7203   +0.0388    0.6     noise |
+  s3: Qabf      0.5386    0.5364 |    0.5433   +0.0069    4.2  **REAL** |    0.5374   +0.0010    0.6     noise |    0.5311   -0.0053    3.2  **REAL** |
+  s8: Qabf      0.5386    0.5364 |    0.5433   +0.0069    2.1  marginal |    0.5374   +0.0010    0.3     noise |    0.5311   -0.0053    1.6     noise |
+  s3: SSIM      0.9807    0.9807 |    0.9538   -0.0270    3.7  **REAL** |    0.9710   -0.0097    1.3     noise |    0.9903   +0.0096    1.3     noise |
+  s8: SSIM      0.9807    0.9807 |    0.9538   -0.0270    3.6  **REAL** |    0.9710   -0.0097    1.3     noise |    0.9903   +0.0096    1.3     noise |
+  s3: EN        6.6631    6.4981 |    6.5257   +0.0276    0.6     noise |    6.3069   -0.1912    4.3  **REAL** |    6.4185   -0.0796    1.8     noise |
+  s8: EN        6.6631    6.4981 |    6.5257   +0.0276    0.1     noise |    6.3069   -0.1912    1.0     noise |    6.4185   -0.0796    0.4     noise |
+  s3: MI        2.3381    2.3010 |    2.2537   -0.0473    0.5     noise |    2.1739   -0.1272    1.3     noise |    2.0609   -0.2401    2.5  marginal |
+  s8: MI        2.3381    2.3010 |    2.2537   -0.0473    0.5     noise |    2.1739   -0.1272    1.5     noise |    2.0609   -0.2401    2.7  marginal |
+  s3: SD       43.7752   43.1696 |   40.9341   -2.2354    2.7  marginal |   40.7875   -2.3821    2.9  marginal |   41.3332   -1.8364    2.2  marginal |
+  s8: SD       43.7752   43.1696 |   40.9341   -2.2354    1.4     noise |   40.7875   -2.3821    1.5     noise |   41.3332   -1.8364    1.2     noise |
+  s3: SF       12.6118   13.0329 |   11.6231   -1.4098   12.0  **REAL** |   12.6433   -0.3896    3.3  **REAL** |   12.5300   -0.5028    4.3  **REAL** |
+  s8: SF       12.6118   13.0329 |   11.6231   -1.4098    4.3  **REAL** |   12.6433   -0.3896    1.2     noise |   12.5300   -0.5028    1.5     noise |
+  s3: AG        3.9777    3.9790 |    3.5767   -0.4023    7.4  **REAL** |    3.8675   -0.1115    2.1  marginal |    3.9637   -0.0153    0.3     noise |
+  s8: AG        3.9777    3.9790 |    3.5767   -0.4023    2.7  marginal |    3.8675   -0.1115    0.8     noise |    3.9637   -0.0153    0.1     noise |
+  s3: VIF       0.9094    0.8350 |    0.8394   +0.0044    0.5     noise |    0.7913   -0.0437    4.6  **REAL** |    0.8007   -0.0343    3.6  **REAL** |
+  s8: VIF       0.9094    0.8350 |    0.8394   +0.0044    0.1     noise |    0.7913   -0.0437    0.9     noise |    0.8007   -0.0343    0.7     noise |
+  s3: SCD       1.6668    1.4653 |    1.7118   +0.2465    3.3  **REAL** |    1.4559   -0.0094    0.1     noise |    1.5971   +0.1318    1.7     noise |
+  s8: SCD       1.6668    1.4653 |    1.7118   +0.2465    1.7     noise |    1.4559   -0.0094    0.1     noise |    1.5971   +0.1318    0.9     noise |
+  s3: Qabf      0.6201    0.6044 |    0.5957   -0.0088    2.0     noise |    0.5984   -0.0061    1.4     noise |    0.5971   -0.0074    1.6     noise |
+  s8: Qabf      0.6201    0.6044 |    0.5957   -0.0088    0.6     noise |    0.5984   -0.0061    0.4     noise |    0.5971   -0.0074    0.5     noise |
+  s3: SSIM      0.9630    0.9039 |    0.9597   +0.0558    2.1  marginal |    0.9234   +0.0194    0.7     noise |    0.8760   -0.0280    1.1     noise |
+  s8: SSIM      0.9630    0.9039 |    0.9597   +0.0558    1.8     noise |    0.9234   +0.0194    0.6     noise |    0.8760   -0.0280    0.9     noise |
+  s3: --- A1b: 15 of 27 metric/dataset cells beyond 3 sigma ---
+  s8: --- A1b: 9 of 27 metric/dataset cells beyond 3 sigma ---
+  s3:     TNO        MI       +0.2244    43.4 sigma   variant HIGHER
+  s8:     TNO        VIF      +0.0373     6.1 sigma   variant HIGHER
+  s3:     TNO        VIF      +0.0373    23.5 sigma   variant HIGHER
+  s8:     RoadScene  VIF      +0.0522     5.6 sigma   variant HIGHER
+  s3:     RoadScene  VIF      +0.0522    15.4 sigma   variant HIGHER
+  s8:     RoadScene  AG       -0.3878     5.0 sigma   variant lower
+  s3:     MSRS       SF       -1.4098    12.0 sigma   variant lower
+  s8:     MSRS       SF       -1.4098     4.3 sigma   variant lower
+  s3:     RoadScene  AG       -0.3878     8.0 sigma   variant lower
+  s8:     TNO        MI       +0.2244     4.2 sigma   variant HIGHER
+  s3:     MSRS       AG       -0.4023     7.4 sigma   variant lower
+  s8:     RoadScene  MI       +0.2697     3.7 sigma   variant HIGHER
+  s3:     RoadScene  SF       -0.7328     5.7 sigma   variant lower
+  s8:     TNO        SSIM     -0.0270     3.6 sigma   variant lower
+  s3:     RoadScene  MI       +0.2697     4.7 sigma   variant HIGHER
+  s8:     RoadScene  SF       -0.7328     3.5 sigma   variant lower
+  s3:     RoadScene  Qabf     +0.0097     4.4 sigma   variant HIGHER
+  s8:     TNO        AG       -0.2828     3.2 sigma   variant lower
+  s3:     TNO        Qabf     +0.0069     4.2 sigma   variant HIGHER
+  s8: 
+  s3:     TNO        SCD      -0.1488     4.0 sigma   variant lower
+  s8: --- A2: 0 of 27 metric/dataset cells beyond 3 sigma ---
+  s3:     TNO        SSIM     -0.0270     3.7 sigma   variant lower
+  s8:     Nothing beyond seed noise. The removed component has no measurable effect here.
+  s3:     TNO        AG       -0.2828     3.6 sigma   variant lower
+  s8: 
+  s3:     MSRS       SCD      +0.2465     3.3 sigma   variant HIGHER
+  s8: --- A3: 1 of 27 metric/dataset cells beyond 3 sigma ---
+  s3:     TNO        EN       -0.0516     3.1 sigma   variant lower
+  s8:     TNO        SD       -1.6939     4.2 sigma   variant lower
+  s3: --- A2: 5 of 27 metric/dataset cells beyond 3 sigma ---
+  s8: 
+  s3:     TNO        MI       +0.0260     5.0 sigma   variant HIGHER
+  s8: ========================================================================================================
+  s3:     MSRS       VIF      -0.0437     4.6 sigma   variant lower
+  s8: A2 vs. the paper's own Table VI row II (TNO) -- does their reported ablation reproduce?
+  s3:     MSRS       EN       -0.1912     4.3 sigma   variant lower
+  s8: ========================================================================================================
+  s3:     TNO        VIF      +0.0068     4.3 sigma   variant HIGHER
+  s8: 
+  s3:     MSRS       SF       -0.3896     3.3 sigma   variant lower
+  s8: metric  paper delta    our delta  our sigma  sig units  agreement
+  s3: 
+  s8: --------------------------------------------------------------------------------------------------------
+  s3: --- A3: 8 of 27 metric/dataset cells beyond 3 sigma ---
+  s8: EN           +0.010      -0.0253     0.0412        0.6  OPPOSITE direction, but ours is within noise
+  s3:     TNO        MI       -0.0841    16.3 sigma   variant lower
+  s8: MI           -0.050      +0.0260     0.0535        0.5  OPPOSITE direction, but ours is within noise
+  s3:     TNO        VIF      -0.0164    10.4 sigma   variant lower
+  s8: SCD          -0.010      -0.0891     0.0614        1.5  same direction, but ours is within noise
+  s3:     RoadScene  VIF      -0.0222     6.6 sigma   variant lower
+  s8: VIF          -0.020      +0.0068     0.0062        1.1  OPPOSITE direction, but ours is within noise
+  s3:     TNO        SD       -1.6939     4.7 sigma   variant lower
+  s8: Qabf         -0.010      +0.0010     0.0033        0.3  OPPOSITE direction, but ours is within noise
+  s3:     MSRS       SF       -0.5028     4.3 sigma   variant lower
+  s8: SSIM         -0.030      -0.0097     0.0076        1.3  same direction, but ours is within noise
+
+--- analyse_a4.py: 73 lines, 34 differ
+  s3: MI        2.3910    2.1864   -0.2046     3.6  **REAL**   |    2.3178    2.2121
+  s8: MI        2.3910    2.1864   -0.2046     2.8  marginal   |    2.3178    2.2121
+  s3: SD       52.4265   52.6766   +0.2501     0.4     noise   |   51.3479   55.3896
+  s8: SD       52.4265   52.6766   +0.2501     0.3     noise   |   51.3479   55.3896
+  s3: SF       18.4380   18.4154   -0.0225     0.2     noise   |   18.4364   19.0263
+  s8: SF       18.4380   18.4154   -0.0225     0.1     noise   |   18.4364   19.0263
+  s3: VIF       0.6857    0.6500   -0.0358    10.6  **REAL**   |    0.6635    0.6527
+  s8: VIF       0.6857    0.6500   -0.0358     3.8  **REAL**   |    0.6635    0.6527
+  s3: SCD       1.6042    1.6808   +0.0767     1.2     noise   |    1.5744    1.6920
+  s8: SCD       1.6042    1.6808   +0.0767     0.9     noise   |    1.5744    1.6920
+  s3: Qabf      0.5842    0.5793   -0.0049     2.2  marginal   |    0.5761    0.5628
+  s8: Qabf      0.5842    0.5793   -0.0049     1.1     noise   |    0.5761    0.5628
+  s3: EN        7.1759    7.1479   -0.0280     1.7     noise   |    7.1408    7.2225
+  s8: EN        7.1759    7.1479   -0.0280     0.7     noise   |    7.1408    7.2225
+  s3: MI        2.0707    1.9129   -0.1578    30.5  **REAL**   |    1.9866    2.0611
+  s8: MI        2.0707    1.9129   -0.1578     2.9  marginal   |    1.9866    2.0611
+  s3: SD       48.0889   46.1475   -1.9414     5.4  **REAL**   |   46.3950   50.0474
+  s8: SD       48.0889   46.1475   -1.9414     4.8  **REAL**   |   46.3950   50.0474
+  s3: SF       14.5916   14.2900   -0.3016     1.1     noise   |   14.0305   14.1589
+  s8: SF       14.5916   14.2900   -0.3016     1.4     noise   |   14.0305   14.1589
+  s3: AG        5.4239    5.3792   -0.0447     0.6     noise   |    5.3004    5.4160
+  s8: AG        5.4239    5.3792   -0.0447     0.5     noise   |    5.3004    5.4160
+  s3: VIF       0.7423    0.7195   -0.0229    14.4  **REAL**   |    0.7259    0.7392
+  s8: VIF       0.7423    0.7195   -0.0229     3.7  **REAL**   |    0.7259    0.7392
+  s3: SCD       1.6816    1.7671   +0.0855     2.3  marginal   |    1.7203    1.6927
+  s8: SCD       1.6816    1.7671   +0.0855     1.4     noise   |    1.7203    1.6927
+  s3: Qabf      0.5364    0.5311   -0.0053     3.2  **REAL**   |    0.5311    0.5283
+  s8: Qabf      0.5364    0.5311   -0.0053     1.6     noise   |    0.5311    0.5283
+  s3: EN        6.4981    6.4667   -0.0314     0.7     noise   |    6.4185    6.7506
+  s8: EN        6.4981    6.4667   -0.0314     0.2     noise   |    6.4185    6.7506
+  s3: MI        2.3010    2.1420   -0.1590     1.6     noise   |    2.0609    2.1836
+  s8: MI        2.3010    2.1420   -0.1590     1.8     noise   |    2.0609    2.1836
+  s3: SD       43.1696   42.9947   -0.1749     0.2     noise   |   41.3332   43.5005
+  s8: SD       43.1696   42.9947   -0.1749     0.1     noise   |   41.3332   43.5005
+  s3: SF       13.0329   13.1507   +0.1179     1.0     noise   |   12.5300   12.8996
+  s8: SF       13.0329   13.1507   +0.1179     0.4     noise   |   12.5300   12.8996
+  s3: AG        3.9790    4.1460   +0.1670     3.1  **REAL**   |    3.9637    4.2437
+  s8: AG        3.9790    4.1460   +0.1670     1.1     noise   |    3.9637    4.2437
+  s3: VIF       0.8350    0.8418   +0.0068     0.7     noise   |    0.8007    0.8801
+  s8: VIF       0.8350    0.8418   +0.0068     0.1     noise   |    0.8007    0.8801
+  s3: SCD       1.4653    1.5330   +0.0677     0.9     noise   |    1.5971    1.5342
+  s8: SCD       1.4653    1.5330   +0.0677     0.5     noise   |    1.5971    1.5342
+  s3: Qabf      0.6044    0.6035   -0.0010     0.2     noise   |    0.5971    0.5976
+  s8: Qabf      0.6044    0.6035   -0.0010     0.1     noise   |    0.5971    0.5976
+  s3:   cells beyond 3 sigma : 7 / 27
+  s8:   cells beyond 3 sigma : 3 / 27
+  s3:     WORSE than the published configuration : 6
+  s8:     WORSE than the published configuration : 3
+  s3:     BETTER                                 : 1
+  s8:     BETTER                                 : 0
+  s3:     TNO        MI       -0.1578    30.5 sigma   WORSE
+  s8:     TNO        SD       -1.9414     4.8 sigma   WORSE
+  s3:     TNO        VIF      -0.0229    14.4 sigma   WORSE
+  s8:     RoadScene  VIF      -0.0358     3.8 sigma   WORSE
+  s3:     RoadScene  VIF      -0.0358    10.6 sigma   WORSE
+  s8:     TNO        VIF      -0.0229     3.7 sigma   WORSE
+  s3:     TNO        SD       -1.9414     5.4 sigma   WORSE
+  s8: 
+  s3:     RoadScene  MI       -0.2046     3.6 sigma   WORSE
+  s8:   READING (per the pre-registration): predominantly WORSE.
+  s3:     TNO        Qabf     -0.0053     3.2 sigma   WORSE
+  s8:   A4 carries 51% MORE parameters than the published model and still loses. The capacity
+  s3:     MSRS       AG       +0.1670     3.1 sigma   BETTER
+  s8:   confound points the opposite way to the result, so it cannot have manufactured it --
+  s3: 
+  s8:   a lower bound on the harm, not an artefact. The CNN in H(.) is doing something the
+  s3:   READING (per the pre-registration): predominantly WORSE.
+  s8:   Transformer does not, and Table VI variant IV understates it.
+
+--- analyse_a3_a5.py: 85 lines, 33 differ
+  s3: EN        7.4546    7.4389    7.5162 |    -0.0157   0.7 |     +0.0617   2.7 |    +0.0774   3.4 |
+  s8: EN        7.4546    7.4389    7.5162 |    -0.0157   0.7 |     +0.0617   2.6 |    +0.0774   3.3 |
+  s3: MI        2.3910    2.3178    2.2121 |    -0.0732   1.3 |     -0.1789   3.1 |    -0.1057   1.9 |
+  s8: MI        2.3910    2.3178    2.2121 |    -0.0732   1.0 |     -0.1789   2.5 |    -0.1057   1.4 |
+  s3: SD       52.4265   51.3479   55.3896 |    -1.0786   1.6 |     +2.9631   4.4 |    +4.0418   6.1 |
+  s8: SD       52.4265   51.3479   55.3896 |    -1.0786   1.2 |     +2.9631   3.3 |    +4.0418   4.5 |
+  s3: SF       18.4380   18.4364   19.0263 |    -0.0016   0.0 |     +0.5884   4.6 |    +0.5900   4.6 |
+  s8: SF       18.4380   18.4364   19.0263 |    -0.0016   0.0 |     +0.5884   2.8 |    +0.5900   2.9 |
+  s3: AG        7.0416    7.0104    7.3441 |    -0.0313   0.6 |     +0.3025   6.3 |    +0.3338   6.9 |
+  s8: AG        7.0416    7.0104    7.3441 |    -0.0313   0.4 |     +0.3025   3.9 |    +0.3338   4.3 |
+  s3: VIF       0.6857    0.6635    0.6527 |    -0.0222   6.6 |     -0.0330   9.7 |    -0.0108   3.2 |       -48%
+  s8: VIF       0.6857    0.6635    0.6527 |    -0.0222   2.4 |     -0.0330   3.5 |    -0.0108   1.1 |
+  s3: SCD       1.6042    1.5744    1.6920 |    -0.0298   0.5 |     +0.0878   1.4 |    +0.1176   1.8 |
+  s8: SCD       1.6042    1.5744    1.6920 |    -0.0298   0.3 |     +0.0878   1.0 |    +0.1176   1.3 |
+  s3: Qabf      0.5842    0.5761    0.5628 |    -0.0081   3.6 |     -0.0214   9.6 |    -0.0133   6.0 |      -165%
+  s8: Qabf      0.5842    0.5761    0.5628 |    -0.0081   1.8 |     -0.0214   4.8 |    -0.0133   3.0 |
+  s3: SSIM      0.9648    0.9659    0.9512 |    +0.0011   0.1 |     -0.0136   1.6 |    -0.0146   1.7 |
+  s8: SSIM      0.9648    0.9659    0.9512 |    +0.0011   0.2 |     -0.0136   2.1 |    -0.0146   2.3 |
+  s3: EN        7.1759    7.1408    7.2225 |    -0.0351   2.1 |     +0.0466   2.8 |    +0.0817   4.9 |
+  s8: EN        7.1759    7.1408    7.2225 |    -0.0351   0.9 |     +0.0466   1.1 |    +0.0817   2.0 |
+  s3: MI        2.0707    1.9866    2.0611 |    -0.0841  16.3 |     -0.0096   1.9 |    +0.0745  14.4 |        89%
+  s8: MI        2.0707    1.9866    2.0611 |    -0.0841   1.6 |     -0.0096   0.2 |    +0.0745   1.4 |
+  s3: SD       48.0889   46.3950   50.0474 |    -1.6939   4.7 |     +1.9585   5.4 |    +3.6524  10.1 |       -16%
+  s8: SD       48.0889   46.3950   50.0474 |    -1.6939   4.2 |     +1.9585   4.8 |    +3.6524   9.0 |       -16%
+  s3: SF       14.5916   14.0305   14.1589 |    -0.5612   2.0 |     -0.4328   1.5 |    +0.1284   0.4 |
+  s8: SF       14.5916   14.0305   14.1589 |    -0.5612   2.6 |     -0.4328   2.0 |    +0.1284   0.6 |
+  s3: AG        5.4239    5.3004    5.4160 |    -0.1234   1.6 |     -0.0079   0.1 |    +0.1156   1.5 |
+  s8: AG        5.4239    5.3004    5.4160 |    -0.1234   1.4 |     -0.0079   0.1 |    +0.1156   1.3 |
+  s3: VIF       0.7423    0.7259    0.7392 |    -0.0164  10.4 |     -0.0031   2.0 |    +0.0133   8.4 |        81%
+  s8: VIF       0.7423    0.7259    0.7392 |    -0.0164   2.7 |     -0.0031   0.5 |    +0.0133   2.2 |
+  s3: SCD       1.6816    1.7203    1.6927 |    +0.0388   1.0 |     +0.0111   0.3 |    -0.0276   0.7 |
+  s8: SCD       1.6816    1.7203    1.6927 |    +0.0388   0.6 |     +0.0111   0.2 |    -0.0276   0.5 |
+  s3: Qabf      0.5364    0.5311    0.5283 |    -0.0053   3.2 |     -0.0081   4.9 |    -0.0028   1.7 |       -53%
+  s8: Qabf      0.5364    0.5311    0.5283 |    -0.0053   1.6 |     -0.0081   2.5 |    -0.0028   0.9 |
+  s3: SSIM      0.9807    0.9903    0.9742 |    +0.0096   1.3 |     -0.0065   0.9 |    -0.0161   2.2 |
+  s8: SSIM      0.9807    0.9903    0.9742 |    +0.0096   1.3 |     -0.0065   0.9 |    -0.0161   2.1 |
+  s3: EN        6.4981    6.4185    6.7506 |    -0.0796   1.8 |     +0.2525   5.7 |    +0.3321   7.5 |
+  s8: EN        6.4981    6.4185    6.7506 |    -0.0796   0.4 |     +0.2525   1.3 |    +0.3321   1.7 |
+  s3: MI        2.3010    2.0609    2.1836 |    -0.2401   2.5 |     -0.1174   1.2 |    +0.1227   1.3 |
+  s8: MI        2.3010    2.0609    2.1836 |    -0.2401   2.7 |     -0.1174   1.3 |    +0.1227   1.4 |
+  s3: SD       43.1696   41.3332   43.5005 |    -1.8364   2.2 |     +0.3309   0.4 |    +2.1672   2.6 |
+  s8: SD       43.1696   41.3332   43.5005 |    -1.8364   1.2 |     +0.3309   0.2 |    +2.1672   1.4 |
+  s3: SF       13.0329   12.5300   12.8996 |    -0.5028   4.3 |     -0.1333   1.1 |    +0.3695   3.2 |        73%
+  s8: SF       13.0329   12.5300   12.8996 |    -0.5028   1.5 |     -0.1333   0.4 |    +0.3695   1.1 |
+  s3: AG        3.9790    3.9637    4.2437 |    -0.0153   0.3 |     +0.2647   4.9 |    +0.2800   5.2 |
+  s8: AG        3.9790    3.9637    4.2437 |    -0.0153   0.1 |     +0.2647   1.8 |    +0.2800   1.9 |
+  s3: VIF       0.8350    0.8007    0.8801 |    -0.0343   3.6 |     +0.0451   4.8 |    +0.0794   8.4 |       -32%
+  s8: VIF       0.8350    0.8007    0.8801 |    -0.0343   0.7 |     +0.0451   1.0 |    +0.0794   1.7 |
+  s3: SCD       1.4653    1.5971    1.5342 |    +0.1318   1.7 |     +0.0689   0.9 |    -0.0629   0.8 |
+  s8: SCD       1.4653    1.5971    1.5342 |    +0.1318   0.9 |     +0.0689   0.5 |    -0.0629   0.4 |
+  s3: Qabf      0.6044    0.5971    0.5976 |    -0.0074   1.6 |     -0.0068   1.5 |    +0.0005   0.1 |
+  s8: Qabf      0.6044    0.5971    0.5976 |    -0.0074   0.5 |     -0.0068   0.5 |    +0.0005   0.0 |
+  s3: SSIM      0.9039    0.8760    0.9153 |    -0.0280   1.1 |     +0.0114   0.4 |    +0.0394   1.5 |
+  s8: SSIM      0.9039    0.8760    0.9153 |    -0.0280   0.9 |     +0.0114   0.4 |    +0.0394   1.3 |
+  s3:   cells where variant III's total effect is real (>3 sigma) : 8 / 27
+  s8:   cells where variant III's total effect is real (>3 sigma) : 1 / 27
+  s3:   ... still real once capacity is matched (the ARCHITECTURE term) : 11 / 27
+  s8:   ... still real once capacity is matched (the ARCHITECTURE term) : 5 / 27
+  s3:   ... explained by capacity alone (the CAPACITY term)            : 14 / 27
+  s8:   ... explained by capacity alone (the CAPACITY term)            : 4 / 27
+  s3:     median -24%   mean -9%   range -165% to +89%
+  s8:     median -16%   mean -16%   range -16% to -16%
+  s3:     capacity removes MOST of the effect (>50%): 3/8
+  s8:     capacity removes MOST of the effect (>50%): 0/1
+  s3:     matching capacity makes the gap LARGER  (<0%): 5/8
+  s8:     matching capacity makes the gap LARGER  (<0%): 1/1
+
+--- analyse_A1b.py: 111 lines, 39 differ
+  s3: EN        7.4535    7.4496    7.4595    7.4546    7.4105   -0.0441   0.0229      1.9  noise
+  s8: EN        7.4535    7.4496    7.4595    7.4546    7.4105   -0.0441   0.0236      1.9  noise
+  s3: MI        2.5478    2.4217    2.3604    2.3910    2.6608   +0.2697   0.0570      4.7  **REAL**
+  s8: MI        2.5478    2.4217    2.3604    2.3910    2.6608   +0.2697   0.0730      3.7  **REAL**
+  s3: SD       52.4027   52.5212   52.3318   52.4265   51.6620   -0.7645   0.6674      1.1  noise
+  s8: SD       52.4027   52.5212   52.3318   52.4265   51.6620   -0.7645   0.9014      0.8  noise
+  s3: SF       18.0860   18.6333   18.2427   18.4380   17.7052   -0.7328   0.1287      5.7  **REAL**
+  s8: SF       18.0860   18.6333   18.2427   18.4380   17.7052   -0.7328   0.2067      3.5  **REAL**
+  s3: AG        6.9031    7.1071    6.9761    7.0416    6.6538   -0.3878   0.0484      8.0  **REAL**
+  s8: AG        6.9031    7.1071    6.9761    7.0416    6.6538   -0.3878   0.0768      5.0  **REAL**
+  s3: VIF       0.7083    0.6892    0.6823    0.6857    0.7379   +0.0522   0.0034     15.4  **REAL**
+  s8: VIF       0.7083    0.6892    0.6823    0.6857    0.7379   +0.0522   0.0094      5.6  **REAL**
+  s3: SCD       1.5767    1.5656    1.6428    1.6042    1.6478   +0.0437   0.0644      0.7  noise
+  s8: SCD       1.5767    1.5656    1.6428    1.6042    1.6478   +0.0437   0.0883      0.5  noise
+  s3: Qabf      0.5933    0.5824    0.5859    0.5842    0.5939   +0.0097   0.0022      4.4  **REAL**
+  s8: Qabf      0.5933    0.5824    0.5859    0.5842    0.5939   +0.0097   0.0045      2.2  marginal
+  s3: SSIM      0.9646    0.9633    0.9663    0.9648    0.9693   +0.0045   0.0087      0.5  noise
+  s8: SSIM      0.9646    0.9633    0.9663    0.9648    0.9693   +0.0045   0.0065      0.7  noise
+  s3: EN        7.1933    7.1646    7.1871    7.1759    7.1243   -0.0516   0.0166      3.1  **REAL**
+  s8: EN        7.1933    7.1646    7.1871    7.1759    7.1243   -0.0516   0.0412      1.3  noise
+  s3: MI        2.1618    2.1118    2.0296    2.0707    2.2951   +0.2244   0.0052     43.4  **REAL**
+  s8: MI        2.1618    2.1118    2.0296    2.0707    2.2951   +0.2244   0.0535      4.2  **REAL**
+  s3: SD       48.6891   48.5357   47.6421   48.0889   47.7139   -0.3749   0.3627      1.0  noise
+  s8: SD       48.6891   48.5357   47.6421   48.0889   47.7139   -0.3749   0.4040      0.9  noise
+  s3: SF       14.3436   14.8178   14.3655   14.5916   14.2579   -0.3337   0.2866      1.2  noise
+  s8: SF       14.3436   14.8178   14.3655   14.5916   14.2579   -0.3337   0.2162      1.5  noise
+  s3: AG        5.3552    5.4719    5.3758    5.4239    5.1411   -0.2828   0.0793      3.6  **REAL**
+  s8: AG        5.3552    5.4719    5.3758    5.4239    5.1411   -0.2828   0.0877      3.2  **REAL**
+  s3: VIF       0.7640    0.7496    0.7351    0.7423    0.7797   +0.0373   0.0016     23.5  **REAL**
+  s8: VIF       0.7640    0.7496    0.7351    0.7423    0.7797   +0.0373   0.0062      6.1  **REAL**
+  s3: SCD       1.6432    1.6289    1.7342    1.6816    1.5328   -0.1488   0.0374      4.0  **REAL**
+  s8: SCD       1.6432    1.6289    1.7342    1.6816    1.5328   -0.1488   0.0614      2.4  marginal
+  s3: Qabf      0.5386    0.5365    0.5363    0.5364    0.5433   +0.0069   0.0016      4.2  **REAL**
+  s8: Qabf      0.5386    0.5365    0.5363    0.5364    0.5433   +0.0069   0.0033      2.1  marginal
+  s3: SSIM      0.9807    0.9785    0.9829    0.9807    0.9538   -0.0270   0.0074      3.7  **REAL**
+  s8: SSIM      0.9807    0.9785    0.9829    0.9807    0.9538   -0.0270   0.0076      3.6  **REAL**
+  s3: EN        6.6631    6.5039    6.4922    6.4981    6.5257   +0.0276   0.0443      0.6  noise
+  s8: EN        6.6631    6.5039    6.4922    6.4981    6.5257   +0.0276   0.1899      0.1  noise
+  s3: MI        2.3381    2.3734    2.2287    2.3010    2.2537   -0.0473   0.0976      0.5  noise
+  s8: MI        2.3381    2.3734    2.2287    2.3010    2.2537   -0.0473   0.0876      0.5  noise
+  s3: SD       43.7752   42.8603   43.4788   43.1696   40.9341   -2.2354   0.8294      2.7  marginal
+  s8: SD       43.7752   42.8603   43.4788   43.1696   40.9341   -2.2354   1.5489      1.4  noise
+  s3: SF       12.6118   12.8084   13.2573   13.0329   11.6231   -1.4098   0.1172     12.0  **REAL**
+  s8: SF       12.6118   12.8084   13.2573   13.0329   11.6231   -1.4098   0.3272      4.3  **REAL**
+  s3: AG        3.9777    3.8193    4.1387    3.9790    3.5767   -0.4023   0.0543      7.4  **REAL**
+  s8: AG        3.9777    3.8193    4.1387    3.9790    3.5767   -0.4023   0.1466      2.7  marginal
+  s3: VIF       0.9094    0.8379    0.8321    0.8350    0.8394   +0.0044   0.0094      0.5  noise
+  s8: VIF       0.9094    0.8379    0.8321    0.8350    0.8394   +0.0044   0.0464      0.1  noise
+  s3: SCD       1.6668    1.4637    1.4669    1.4653    1.7118   +0.2465   0.0757      3.3  **REAL**
+  s8: SCD       1.6668    1.4637    1.4669    1.4653    1.7118   +0.2465   0.1465      1.7  noise
+  s3: Qabf      0.6201    0.6019    0.6069    0.6044    0.5957   -0.0088   0.0045      2.0  noise
+  s8: Qabf      0.6201    0.6019    0.6069    0.6044    0.5957   -0.0088   0.0144      0.6  noise
+  s3: SSIM      0.9630    0.9194    0.8884    0.9039    0.9597   +0.0558   0.0262      2.1  marginal
+  s8: SSIM      0.9630    0.9194    0.8884    0.9039    0.9597   +0.0558   0.0315      1.8  noise
+  s3: 15 of 27 metric/dataset cells exceed 3 sigma:
+  s8: 9 of 27 metric/dataset cells exceed 3 sigma:
+  s3:   TNO        MI      +0.2244  =  43.4 sigma   (k=0 HIGHER)
+  s8:   TNO        VIF     +0.0373  =   6.1 sigma   (k=0 HIGHER)
+  s3:   TNO        VIF     +0.0373  =  23.5 sigma   (k=0 HIGHER)
+  s8:   RoadScene  VIF     +0.0522  =   5.6 sigma   (k=0 HIGHER)
+  s3:   RoadScene  VIF     +0.0522  =  15.4 sigma   (k=0 HIGHER)
+  s8:   RoadScene  AG      -0.3878  =   5.0 sigma   (k=0 lower)
+  s3:   MSRS       SF      -1.4098  =  12.0 sigma   (k=0 lower)
+  s8:   MSRS       SF      -1.4098  =   4.3 sigma   (k=0 lower)
+  s3:   RoadScene  AG      -0.3878  =   8.0 sigma   (k=0 lower)
+  s8:   TNO        MI      +0.2244  =   4.2 sigma   (k=0 HIGHER)
+  s3:   MSRS       AG      -0.4023  =   7.4 sigma   (k=0 lower)
+  s8:   RoadScene  MI      +0.2697  =   3.7 sigma   (k=0 HIGHER)
+  s3:   RoadScene  SF      -0.7328  =   5.7 sigma   (k=0 lower)
+  s8:   TNO        SSIM    -0.0270  =   3.6 sigma   (k=0 lower)
+  s3:   RoadScene  MI      +0.2697  =   4.7 sigma   (k=0 HIGHER)
+  s8:   RoadScene  SF      -0.7328  =   3.5 sigma   (k=0 lower)
+  s3:   RoadScene  Qabf    +0.0097  =   4.4 sigma   (k=0 HIGHER)
+  s8:   TNO        AG      -0.2828  =   3.2 sigma   (k=0 lower)
+  s3:   TNO        Qabf    +0.0069  =   4.2 sigma   (k=0 HIGHER)
+  s8: 
+  s3:   TNO        SCD     -0.1488  =   4.0 sigma   (k=0 lower)
+  s8: 18 cells are within 3 sigma of the R1 configuration.
+
+====================================================================================================
+B. Tier 2 deficits of retraining vs the released checkpoint, |mean of 5 retrained - released| / sigma
+====================================================================================================
+  RoadScene EN 0.1->0.1  MI 2.5->1.9  SD 0.3->0.2  SF 1.7->1.1  AG 2.0->1.3  VIF 6.0->2.2  SCD 0.4->0.3  Qabf 3.9->1.9  SSIM 0.0->0.0
+            >= 3 sigma_3: ['VIF', 'Qabf']   >= 3 sigma_8: []
+  TNO       EN 1.1->0.5  MI 17.6->1.7  SD 1.5->1.3  SF 0.1->0.2  AG 0.1->0.1  VIF 12.4->3.2  SCD 1.0->0.6  Qabf 1.4->0.7  SSIM 0.1->0.1
+            >= 3 sigma_3: ['MI', 'VIF']   >= 3 sigma_8: ['VIF']
+  MSRS      EN 4.1->1.0  MI 0.8->0.8  SD 0.9->0.5  SF 3.3->1.2  AG 0.5->0.2  VIF 7.7->1.6  SCD 2.0->1.0  Qabf 2.9->0.9  SSIM 1.7->1.4
+            >= 3 sigma_3: ['EN', 'SF', 'VIF']   >= 3 sigma_8: []
+
+====================================================================================================
+C. capacity decomposition: 3-sigma rule and t-test at the estimate's df (sigma_3: df 2; sigma_8: df 7)
+====================================================================================================
+  sigma_3: rule total 8, arch 11, cap 14 of 27 | t-test (t_crit 4.303) total 3, arch 5, cap 6 of 27
+     capacity cells >= 3 sigma, A5 (attention) higher: ['RoadScene:EN', 'RoadScene:SD', 'RoadScene:SF', 'RoadScene:AG', 'TNO:EN', 'TNO:MI', 'TNO:SD', 'TNO:VIF', 'MSRS:EN', 'MSRS:SF', 'MSRS:AG', 'MSRS:VIF']
+     capacity cells >= 3 sigma, A3 (deep CNN) higher: ['RoadScene:VIF', 'RoadScene:Qabf']
+  sigma_8: rule total 1, arch 5, cap 4 of 27 | t-test (t_crit 2.365) total 1, arch 5, cap 3 of 27
+     capacity cells >= 3 sigma, A5 (attention) higher: ['RoadScene:EN', 'RoadScene:SD', 'RoadScene:AG', 'TNO:SD']
+     capacity cells >= 3 sigma, A3 (deep CNN) higher: []
+
+====================================================================================================
+D. architecture term (A5 widened CNN vs R1/R1b attention) cells >= 3 sigma, by direction
+====================================================================================================
+  sigma_3: attention higher ['RoadScene:MI', 'RoadScene:VIF', 'RoadScene:Qabf', 'TNO:Qabf']
+           deep CNN higher ['RoadScene:SD', 'RoadScene:SF', 'RoadScene:AG', 'TNO:SD', 'MSRS:EN', 'MSRS:AG', 'MSRS:VIF']
+  sigma_8: attention higher ['RoadScene:VIF', 'RoadScene:Qabf']
+           deep CNN higher ['RoadScene:SD', 'RoadScene:AG', 'TNO:SD']
+
+====================================================================================================
+E. k = 0 spread (Run 11's registered rows, n = 5) against the released configuration (NOT registered:
+   a re-reading of Run 11's A-3 statistic with sigma_8, plus an F test per cell, Holm across 27)
+====================================================================================================
+  sigma_3: median sd ratio 2.16, larger in 21 of 27; F test surviving Holm: []
+  sigma_8: median sd ratio 1.26, larger in 17 of 27; F test surviving Holm: [('MSRS', 'SCD', 0.1)]
+
+====================================================================================================
+F. Table VI rows I and II (the authors' printed values, TNO) under the two-decimal rounding rule
+   noise: whole range < 3 sigma; robust: low end >= 3 sigma; else not resolvable at two decimals
+====================================================================================================
+  row I  w/o Top-K sigma_3: EN 0.6 (0.0-1.2) noise; MI 11.6 (9.7-13.5) ablated robust; SCD 0.8 (0.5-1.1) noise; VIF 0.0 (0.0-6.3) unresolvable; Qabf 6.1 (0.0-12.2) unresolvable; SSIM 0.0 (0.0-1.4) noise
+  row I  w/o Top-K sigma_8: EN 0.2 (0.0-0.5) noise; MI 1.1 (0.9-1.3) noise; SCD 0.5 (0.3-0.7) noise; VIF 0.0 (0.0-1.6) noise; Qabf 3.1 (0.0-6.1) unresolvable; SSIM 0.0 (0.0-1.3) noise
+  row II w/o L_ssl sigma_3: EN 0.6 (0.0-1.2) noise; MI 9.7 (7.7-11.6) full robust; SCD 0.3 (0.0-0.5) noise; VIF 12.6 (6.3-18.9) full robust; Qabf 0.0 (0.0-6.1) unresolvable; SSIM 4.1 (2.7-5.4) unresolvable
+  row II w/o L_ssl sigma_8: EN 0.2 (0.0-0.5) noise; MI 0.9 (0.7-1.1) noise; SCD 0.2 (0.0-0.3) noise; VIF 3.2 (1.6-4.9) unresolvable; Qabf 0.0 (0.0-3.1) unresolvable; SSIM 4.0 (2.6-5.3) unresolvable

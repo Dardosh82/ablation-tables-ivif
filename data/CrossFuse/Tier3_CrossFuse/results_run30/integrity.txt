@@ -1,0 +1,5 @@
+U42 ON reproduces the record to four decimals: yes
+U43 ON reproduces the record to four decimals: yes
+U44 ON reproduces the record to four decimals: yes
+U45 ON reproduces the record to four decimals: yes
+U46 ON reproduces the record to four decimals: yes

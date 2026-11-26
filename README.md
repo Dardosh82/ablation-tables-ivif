@@ -64,8 +64,17 @@ section rests on.
 `scripts/runs29-32/` holds the kernel builders and analyses of the four last registered runs (hierarchical
 bootstrap; the decoder skip removed; case study I's sigma at eight seeds; downstream person detection). They
 read and write paths in the project's own layout, `studied_papers/...`, which `data/` reproduces under the same
-names; each run's registration is in `registrations/`, and its outputs (per-run, per-image and per-detection
-summaries) in `data/`.
+names, so one command rebuilds that layout and runs them (statistics on recorded files only; no GPU, nothing
+trained or fused):
+
+```
+python scripts/runs29-32/make_tree.py --run   # copies data/ to _tree/studied_papers/, runs the four analyses and
+                                              # the sigma recompute, and checks each output against data/
+```
+
+Each run's registration is in `registrations/`; its recorded outputs are in `data/`, including the analyses' own
+reports (`RUN29_ANALYSIS.txt` to `RUN32_ANALYSIS.txt`, `SIGMA8_RECOMPUTE.txt`) and Run 32's raw detections
+(`data/LRRNet/results_run32/run32/preds/*.npz`, one per network), from which `analyse_run32.py` recomputes every AP50.
 
 ## The paper source
 

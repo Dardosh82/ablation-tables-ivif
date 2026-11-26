@@ -1,0 +1,25 @@
+Run 30 -- the decoder's skip removed from the same five untrained CrossFuse networks
+
+integrity: U-ON reproduces the record for all five seeds
+
+P1  mean r(output, visible), 25 TNO pairs
+  U42  skip ON 0.9975   skip OFF 0.3829
+  U43  skip ON 0.9975   skip OFF 0.3249
+  U44  skip ON 0.9977   skip OFF -0.4706
+  U45  skip ON 0.9958   skip OFF 0.5477
+  U46  skip ON 0.9957   skip OFF 0.4012
+  -> COPY GONE
+
+P2  trained (5) vs untrained with the skip OFF (5), TNO; Welch exact df, Holm across nine
+  metric    trained       U-ON      U-OFF        t     df         p    Holm p
+  EN         7.1787     7.0140     5.7411    10.39   4.11  4.21e-04  1.69e-03
+  MI         2.2967     3.4738     0.8768    24.99   4.41  6.43e-06  4.50e-05
+  SD        49.3629    46.4051    17.9104    22.45   5.84  6.88e-07  5.50e-06
+  SF        14.4548    10.7923    12.0750     2.55   4.19  6.08e-02  6.08e-02
+  AG         5.3203     3.9354     3.5464     7.78   4.87  6.31e-04  1.89e-03
+  VIF        0.7843     0.9450     0.1018    20.34   4.10  2.85e-05  1.71e-04
+  SCD        1.5420     0.9278     0.7552     4.75   4.15  8.17e-03  1.63e-02
+  Qabf       0.5396     0.5258     0.1254    73.42   7.80  2.33e-12  2.09e-11
+  SSIM       0.9524     0.9041     0.0776    13.24   4.05  1.74e-04  8.70e-04
+  MI: trained higher True, survives Holm True;  VIF: trained higher True, survives Holm True
+  -> CAUSAL

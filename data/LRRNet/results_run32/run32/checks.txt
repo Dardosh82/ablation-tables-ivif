@@ -1,0 +1,80 @@
+ultralytics 8.3.0 | yolov8s.pt sha256 1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a | person class name: person
+LLVIP test pairs: 3463
+subset: 1000 pairs, first five ['260533.jpg', '190039.jpg', '210145.jpg', '220273.jpg', '230334.jpg'] | list sha256 37ea04d155d0b0a0e7af07469150471adc9ca33b337f0a0153adfb79c149dea6
+ground truth: person boxes 2374 | images with none 0
+REF_IR                       reference infrared only    AP50 0.7586  detections   42921  mean std 49.78
+REF_VIS                      reference visible only     AP50 0.7281  detections   55413  mean std 34.88
+CrossFuse: all 10 checkpoints present with the recorded SHA-256
+LRRNet: all 20 checkpoints present
+LRR_nb4_seed42               LRRNet    published d4     AP50 0.7955  detections   78596  mean std 33.07
+   elapsed 0.12 h
+LRR_nb4_seed43               LRRNet    published d4     AP50 0.7979  detections   89645  mean std 32.96
+   elapsed 0.23 h
+LRR_nb4_seed44               LRRNet    published d4     AP50 0.8003  detections   87868  mean std 34.11
+   elapsed 0.35 h
+LRR_nb4_seed45               LRRNet    published d4     AP50 0.7642  detections   79696  mean std 33.44
+   elapsed 0.46 h
+LRR_nb4_seed46               LRRNet    published d4     AP50 0.8121  detections   98014  mean std 33.36
+   elapsed 0.58 h
+LRR_nb4_untrained_seed400    LRRNet    untrained d4     AP50 0.6700  detections   18479  mean std 10.19
+   elapsed 0.69 h
+LRR_nb4_untrained_seed401    LRRNet    untrained d4     AP50 0.7363  detections   42189  mean std 27.38
+   elapsed 0.81 h
+LRR_nb4_untrained_seed402    LRRNet    untrained d4     AP50 0.6247  detections   18629  mean std 16.31
+   elapsed 0.92 h
+LRR_nb4_untrained_seed403    LRRNet    untrained d4     AP50 0.6980  detections   35535  mean std 14.01
+   elapsed 1.04 h
+LRR_nb4_untrained_seed404    LRRNet    untrained d4     AP50 0.7826  detections   36974  mean std 33.94
+   elapsed 1.15 h
+LRR_m1tied_nb8_seed62        LRRNet    tied d8          AP50 0.7992  detections   69520  mean std 33.73
+   elapsed 1.35 h
+LRR_nb8_seed62               LRRNet    untied d8        AP50 0.8034  detections   90755  mean std 32.94
+   elapsed 1.55 h
+LRR_m1tied_nb8_seed63        LRRNet    tied d8          AP50 0.7962  detections   78640  mean std 33.45
+   elapsed 1.76 h
+LRR_nb8_seed63               LRRNet    untied d8        AP50 0.8053  detections   90693  mean std 32.80
+   elapsed 1.96 h
+LRR_m1tied_nb8_seed64        LRRNet    tied d8          AP50 0.7956  detections   92114  mean std 33.11
+   elapsed 2.16 h
+LRR_nb8_seed64               LRRNet    untied d8        AP50 0.7948  detections   87513  mean std 32.82
+   elapsed 2.36 h
+LRR_m1tied_nb8_seed65        LRRNet    tied d8          AP50 0.8100  detections   85717  mean std 34.43
+   elapsed 2.56 h
+LRR_nb8_seed65               LRRNet    untied d8        AP50 0.8025  detections   93812  mean std 32.65
+   elapsed 2.76 h
+LRR_m1tied_nb8_seed66        LRRNet    tied d8          AP50 0.8173  detections   80925  mean std 33.96
+   elapsed 2.96 h
+LRR_nb8_seed66               LRRNet    untied d8        AP50 0.7934  detections   87008  mean std 32.90
+   elapsed 3.16 h
+CF_A1b                       CrossFuse trained          AP50 0.8005  detections   55033  mean std 46.23
+   elapsed 3.47 h
+CF_A1c                       CrossFuse trained          AP50 0.8010  detections   55561  mean std 51.76
+   elapsed 3.79 h
+CF_A1d                       CrossFuse trained          AP50 0.8056  detections   54585  mean std 48.59
+   elapsed 4.10 h
+CF_PC45                      CrossFuse trained          AP50 0.8043  detections   51643  mean std 47.34
+   elapsed 4.42 h
+CF_PC46                      CrossFuse trained          AP50 0.7975  detections   51915  mean std 46.39
+   elapsed 4.73 h
+CF_U42_ON                    CrossFuse untrained skip on AP50 0.7336  detections   62839  mean std 33.71
+   elapsed 5.05 h
+CF_U43_ON                    CrossFuse untrained skip on AP50 0.7062  detections   58964  mean std 34.15
+   elapsed 5.36 h
+CF_U44_ON                    CrossFuse untrained skip on AP50 0.7616  detections   65912  mean std 32.56
+   elapsed 5.67 h
+CF_U45_ON                    CrossFuse untrained skip on AP50 0.7134  detections   62185  mean std 35.26
+   elapsed 5.99 h
+CF_U46_ON                    CrossFuse untrained skip on AP50 0.6641  detections   60459  mean std 32.38
+   elapsed 6.30 h
+CF_U42_OFF                   CrossFuse untrained skip off AP50 0.4474  detections   23087  mean std 20.82
+   elapsed 6.62 h
+CF_U43_OFF                   CrossFuse untrained skip off AP50 0.3814  detections   18436  mean std 18.20
+   elapsed 6.93 h
+CF_U44_OFF                   CrossFuse untrained skip off AP50 0.5715  detections   20710  mean std 15.33
+   elapsed 7.25 h
+CF_U45_OFF                   CrossFuse untrained skip off AP50 0.5680  detections   38072  mean std 30.73
+   elapsed 7.56 h
+CF_U46_OFF                   CrossFuse untrained skip off AP50 0.4237  detections   18475  mean std 20.57
+   elapsed 7.88 h
+scored networks per arm: {('LRRNet', 'published d4'): 5, ('LRRNet', 'untrained d4'): 5, ('LRRNet', 'tied d8'): 5, ('LRRNet', 'untied d8'): 5, ('CrossFuse', 'trained'): 5, ('CrossFuse', 'untrained skip on'): 5, ('CrossFuse', 'untrained skip off'): 5}
+RUN 32 KERNEL DONE: 35 networks and 2 references scored on 1000 LLVIP test pairs

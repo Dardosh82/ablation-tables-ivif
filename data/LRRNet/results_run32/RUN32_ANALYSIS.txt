@@ -1,0 +1,29 @@
+Run 32 -- YOLOv8s (COCO, never fine-tuned) person AP50 on 1,000 LLVIP test pairs at 640x512
+
+integrity: AP50 recomputed from the raw detections, largest difference 4.9e-07 (passes 1e-6)
+ground truth: 2374 person boxes in 1000 images
+blank networks excluded: none
+
+  arm                           mean AP50       sd   per network
+  CrossFuse trained                0.8018   0.0032   0.8005 0.8010 0.8056 0.8043 0.7975
+  CrossFuse untrained skip on      0.7158   0.0360   0.7336 0.7062 0.7616 0.7134 0.6641
+  CrossFuse untrained skip off     0.4784   0.0867   0.4474 0.3814 0.5715 0.5680 0.4237
+  LRRNet published d4              0.7940   0.0178   0.7955 0.7979 0.8003 0.7642 0.8121
+  LRRNet untrained d4              0.7023   0.0606   0.6700 0.7363 0.6247 0.6980 0.7826
+  LRRNet tied d8                   0.8037   0.0096   0.7992 0.7962 0.7956 0.8100 0.8173
+  LRRNet untied d8                 0.7999   0.0054   0.8034 0.8053 0.7948 0.8025 0.7934
+  reference infrared only          0.7586
+  reference visible only           0.7281
+
+Registered contrasts -- Welch exact df, Holm across three
+             A        B      A-B       t     df         p    Holm p  verdict
+  D1    0.8018   0.7158  +0.0860    5.32   4.06  5.75e-03  1.73e-02  AGREES WITH THE CONTROL
+  D2    0.7940   0.7023  +0.0917    3.25   4.69  2.50e-02  5.01e-02  INCONCLUSIVE
+  D3    0.8037   0.7999  +0.0038    0.77   6.30  4.70e-01  4.70e-01  DOES NOT TRANSFER
+
+Descriptive: does the AP50 ordering match the MI and VIF ordering on TNO (recorded tables)?
+  CF_T     vs CF_ON     AP50 >   MI < (2.297 vs 3.474)   VIF < (0.784 vs 0.945)
+  CF_T     vs CF_OFF    AP50 >   MI > (2.297 vs 0.877)   VIF > (0.784 vs 0.102)
+  CF_ON    vs CF_OFF    AP50 >   MI > (3.474 vs 0.877)   VIF > (0.945 vs 0.102)
+  L_PUB    vs L_UNT     AP50 >   MI > (2.502 vs 1.234)   VIF > (0.765 vs 0.094)
+  L_TIED   vs L_UNTIED  AP50 >   MI < (2.455 vs 2.457)   VIF > (0.768 vs 0.720)

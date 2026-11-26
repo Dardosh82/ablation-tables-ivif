@@ -72,6 +72,7 @@ evaluator wrote them), by the folder they were written to. Run numbers are those
 | `data/CrossFuse/Tier2_CrossFuse/results_run31/cf-run31-c` | 1 |
 | `data/CrossFuse/Tier2_CrossFuse/results_run31/cf-run31-c/models_R3s49` | 1 |
 | `data/CrossFuse/Tier2_CrossFuse/results_run31/cf-run31-c/tables_R3s49_raw` | 6 |
+| `data/CrossFuse/Tier2_CrossFuse/results_run31` | 2 |
 | `data/CrossFuse/Tier2_CrossFuse/upload_code` | 1 |
 | `data/CrossFuse/Tier2_CrossFuse/upload_models` | 1 |
 | `data/CrossFuse/Tier2_CrossFuse/upload_r2model` | 2 |
@@ -180,7 +181,7 @@ evaluator wrote them), by the folder they were written to. Run numbers are those
 | `data/CrossFuse/Tier3_CrossFuse/results_run28_s51` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/results_run28_s51/tables_RD51_raw` | 6 |
 | `data/CrossFuse/Tier3_CrossFuse/results_run28_s51/tables_TK51_raw` | 6 |
-| `data/CrossFuse/Tier3_CrossFuse/results_run30` | 1 |
+| `data/CrossFuse/Tier3_CrossFuse/results_run30` | 3 |
 | `data/CrossFuse/Tier3_CrossFuse/results_run30/tables/U42_OFF` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/results_run30/tables/U42_ON` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/results_run30/tables/U43_OFF` | 2 |
@@ -191,7 +192,7 @@ evaluator wrote them), by the folder they were written to. Run numbers are those
 | `data/CrossFuse/Tier3_CrossFuse/results_run30/tables/U45_ON` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/results_run30/tables/U46_OFF` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/results_run30/tables/U46_ON` | 2 |
-| `data/CrossFuse/Tier3_CrossFuse` | 1 |
+| `data/CrossFuse/Tier3_CrossFuse` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/upload_k0` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/upload_poscontrol` | 2 |
 | `data/CrossFuse/Tier3_CrossFuse/upload_run32_ckpts` | 1 |
@@ -201,7 +202,7 @@ evaluator wrote them), by the folder they were written to. Run numbers are those
 | `data/LRRNet/.templates/lrrnet-stage2` | 1 |
 | `data/LRRNet/.templates/lrrnet-stage3` | 1 |
 | `data/LRRNet/.templates/lrrnet-stage4` | 1 |
-| `data/LRRNet` | 1 |
+| `data/LRRNet` | 3 |
 | `data/LRRNet/kernel_csv/lrrnet-m1-nb8` | 1 |
 | `data/LRRNet/kernel_csv/lrrnet-m1-tied` | 2 |
 | `data/LRRNet/kernel_csv/lrrnet-m2` | 1 |
@@ -326,8 +327,10 @@ evaluator wrote them), by the folder they were written to. Run numbers are those
 | `data/LRRNet/results_run26` | 1 |
 | `data/LRRNet/results_run27_k0` | 1 |
 | `data/LRRNet/results_run27_topk` | 1 |
-| `data/LRRNet/results_run29` | 14 |
-| `data/LRRNet/results_run32/run32` | 2 |
+| `data/LRRNet/results_run29` | 15 |
+| `data/LRRNet/results_run32/run32` | 4 |
+| `data/LRRNet/results_run32/run32/preds` | 37 |
+| `data/LRRNet/results_run32` | 1 |
 | `data/LRRNet/results_run9_nb2` | 1 |
 | `data/LRRNet/results_run9_nb4` | 1 |
 | `data/LRRNet/results_run9_nb6` | 1 |

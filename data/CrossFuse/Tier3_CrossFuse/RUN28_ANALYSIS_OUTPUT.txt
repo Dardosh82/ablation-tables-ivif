@@ -1,0 +1,57 @@
+Run 28: n per arm {'topk': 5, 'rand': 5}
+
+=== PRIMARY: variance ratio sigma^2(rand)/sigma^2(topk), TNO, F-test two-sided, Holm over 7 ===
+df (4, 4); a ratio beyond 9.60 (or below 0.104) is significant uncorrected
+metric    ratio        p  Holm
+EN        0.690   0.7284  -
+MI        2.626   0.3724  -
+SD        0.306   0.2777  -
+VIF       2.470   0.4025  -
+SCD       2.464   0.4038  -
+Qabf      0.450   0.4587  -
+SSIM      2.394   0.4185  -
+-> OUTCOME S2 NONE DETECTED
+
+=== ATTRIBUTION: median sigma(rand)/sigma(topk) over 27 cells, bootstrap 95 % CI over runs ===
+median ratio 1.005  95 % CI [0.483, 2.311]  (9972 valid resamples); rand more variable in 14 of 27 cells
+  TNO       EN=0.83  MI=1.62  SD=0.55  SF=4.19  AG=2.23  VIF=1.57  SCD=1.57  Qabf=0.67  SSIM=1.55
+  RoadScene EN=2.01  MI=2.23  SD=1.44  SF=2.66  AG=3.07  VIF=1.78  SCD=0.66  Qabf=1.03  SSIM=1.00
+  MSRS      EN=0.90  MI=0.39  SD=0.41  SF=0.37  AG=0.58  VIF=0.58  SCD=0.60  Qabf=0.48  SSIM=0.21
+-> READING U UNRESOLVED  (k = 0 vs released was 2.17)
+
+=== SECONDARY: means, Welch's t (own df), Holm within each test set; TOST at +-1.75 pooled sigma ===
+-- TNO
+metric diff(sig)       t    df        p  Holm      TOST p
+EN         -1.47   -2.32   7.7   0.0502  -         0.3327
+MI          1.52    2.40   6.7   0.0491  -         0.3633
+SD         -0.62   -0.98   6.2   0.3623  -         0.0614
+SF         -1.77   -2.79   4.5   0.0435  -         0.5105
+AG         -1.91   -3.02   5.5   0.0258  -         0.5950
+VIF         1.71    2.71   6.8   0.0311  -         0.4780
+SCD        -0.17   -0.28   6.8   0.7903  -         0.0213  equivalent
+Qabf        2.10    3.32   7.0   0.0128  -         0.7008
+SSIM        1.47    2.32   6.8   0.0542  -         0.3345
+-- RoadScene
+metric diff(sig)       t    df        p  Holm      TOST p
+EN         -2.16   -3.42   5.9   0.0146  -         0.7305
+MI          0.99    1.56   5.5   0.1731  -         0.1387
+SD         -0.55   -0.87   7.1   0.4114  -         0.0496  equivalent
+SF         -1.43   -2.27   5.1   0.0717  -         0.3186
+AG         -1.55   -2.45   4.8   0.0596  -         0.3822
+VIF         0.93    1.47   6.3   0.1891  -         0.1205
+SCD         0.38    0.60   6.9   0.5696  -         0.0335  equivalent
+Qabf       -0.25   -0.40   8.0   0.6978  -         0.0228  equivalent
+SSIM        0.73    1.15   8.0   0.2848  -         0.0719
+-- MSRS
+metric diff(sig)       t    df        p  Holm      TOST p
+EN          2.02    3.19   7.9   0.0129  -         0.6594
+MI          0.74    1.17   5.2   0.2944  -         0.0842
+SD          2.16    3.42   5.3   0.0170  -         0.7298
+SF         -1.47   -2.32   5.1   0.0676  -         0.3358
+AG          0.81    1.28   6.4   0.2447  -         0.0923
+VIF         2.16    3.41   6.4   0.0129  -         0.7280
+SCD         1.26    2.00   6.5   0.0885  -         0.2350
+Qabf        1.20    1.90   5.7   0.1086  -         0.2101
+SSIM        1.86    2.94   4.4   0.0380  -         0.5656
+
+SUMMARY  primary S2 NONE DETECTED | attribution U UNRESOLVED (median 1.00, CI 0.48-2.31) | n {'topk': 5, 'rand': 5}

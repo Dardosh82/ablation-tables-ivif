@@ -1,0 +1,29 @@
+====================================================================================================
+RUN 10 -- KILL CRITERIA, checked per setting before any statistic
+====================================================================================================
+  [OK  ] nb=2: 12 seeds (50-61), finite, final losses 54,667-59,604 within 3x of existing 54,450-58,741
+  [OK  ] nb=4: 12 seeds (50-61), finite, final losses 53,998-58,756 within 3x of existing 54,175-58,405
+  nb=6: PENDING -- no Run 10 output downloaded yet
+  status: nb=2 OK, nb=4 OK, nb=6 PENDING
+
+====================================================================================================
+A. CONFIRMATORY -- SCD, nb=2 against nb=4, new seeds 50-61 only, Welch two-sided 5 %
+====================================================================================================
+  nb=2 1.2933 +/-0.0277   nb=4 1.2704 +/-0.0531   diff +0.0229 = +0.54 pooled sigma
+  Welch t = +1.325, df = 16.6, p = 0.2031
+  A2 NOT REPLICATED (p >= 0.05): Run 9's cell was consistent with chance, as the correction for 27 tests
+  indicated. Power was 82 % at the selected 1.23 sigma and 47 % at 0.8 sigma, so this does not show
+  the effect is zero, only that it did not replicate at that size.
+
+====================================================================================================
+B. SECONDARY -- TOST at +/-1.75 pooled sigma on all seeds pooled (n = 20 per arm)
+====================================================================================================
+  4v2 SF  : d = -0.77 sigma, 90 % CI [-1.31, -0.24], Welch p = 0.0191, TOST p = 0.0019 -> EQUIVALENT AND DIFFERENT -- a real difference smaller than the design resolution
+  4v2 AG  : d = -0.64 sigma, 90 % CI [-1.17, -0.10], Welch p = 0.0514, TOST p = 0.0006 -> EQUIVALENT
+  4v2 SCD : d = -0.82 sigma, 90 % CI [-1.35, -0.28], Welch p = 0.0152, TOST p = 0.0032 -> EQUIVALENT AND DIFFERENT -- a real difference smaller than the design resolution
+  4v6 SF  : INCONCLUSIVE, pending -- nb=4 OK, nb=6 PENDING
+
+====================================================================================================
+FULL TABLE AT n = 20 -- descriptive, Holm across 18 cells (2 and 6 against 4)
+====================================================================================================
+  not printed until nb=2, nb=4 and nb=6 are all OK -- nb=2 OK, nb=4 OK, nb=6 PENDING
