@@ -46,7 +46,49 @@ def holm(ps):
     return adj
 
 
+def _ap_from_tp(tp, ngt):
+    ctp = np.cumsum(tp)
+    rec, prec = ctp / ngt, ctp / np.arange(1, len(tp) + 1)
+    mrec, mpre = np.concatenate([[0.0], rec, [1.0]]), np.concatenate([[0.0], prec, [0.0]])
+    mpre = np.maximum.accumulate(mpre[::-1])[::-1]
+    k = np.where(mrec[1:] != mrec[:-1])[0]
+    return float(np.sum((mrec[k + 1] - mrec[k]) * mpre[k + 1]))
+
+
 def ap50(img, boxes, scores, gt, ngt):
+    """AP50 as the kernel computed it, vectorised (2026-11-26: the detection-by-detection loop below took minutes per
+    run of this script, over ten on an external reviewer's machine). Greedy VOC matching assigns each detection to the
+    box it overlaps most and never to a second-best one, so the true positive for each (image, box) is simply the
+    earliest detection in score order that points at it with IoU >= 0.5. Identical to ap50_loop on all 37 networks
+    (run with --check-loop)."""
+    order = np.argsort(-scores, kind="stable")
+    rank = np.empty(len(order), np.int64)
+    rank[order] = np.arange(len(order))
+    best_iou, best_j = np.zeros(len(scores)), np.full(len(scores), -1, np.int64)
+    for i in np.unique(img):
+        g = gt[i]
+        if len(g) == 0:
+            continue
+        sel = np.nonzero(img == i)[0]
+        b = boxes[sel]
+        x1, y1 = np.maximum(b[:, None, 0], g[None, :, 0]), np.maximum(b[:, None, 1], g[None, :, 1])
+        x2, y2 = np.minimum(b[:, None, 2], g[None, :, 2]), np.minimum(b[:, None, 3], g[None, :, 3])
+        inter = np.clip(x2 - x1, 0, None) * np.clip(y2 - y1, 0, None)
+        o = inter / ((b[:, None, 2] - b[:, None, 0]) * (b[:, None, 3] - b[:, None, 1])
+                     + (g[None, :, 2] - g[None, :, 0]) * (g[None, :, 3] - g[None, :, 1]) - inter)
+        j = np.argmax(o, axis=1)
+        best_j[sel], best_iou[sel] = j, o[np.arange(len(sel)), j]
+    cand = np.nonzero(best_iou >= 0.5)[0]
+    c = cand[np.lexsort((rank[cand], best_j[cand], img[cand]))]
+    first = np.ones(len(c), bool)
+    first[1:] = (img[c][1:] != img[c][:-1]) | (best_j[c][1:] != best_j[c][:-1])
+    tp_det = np.zeros(len(scores))
+    tp_det[c[first]] = 1
+    return _ap_from_tp(tp_det[order], ngt)
+
+
+def ap50_loop(img, boxes, scores, gt, ngt):
+    """The kernel's own loop, kept as the reference the vectorised version is checked against."""
     order = np.argsort(-scores, kind="stable")
     used = [np.zeros(len(g), bool) for g in gt]
     tp = np.zeros(len(order))
@@ -63,12 +105,7 @@ def ap50(img, boxes, scores, gt, ngt):
         if o[j] >= 0.5 and not used[img[i]][j]:
             used[img[i]][j] = True
             tp[k] = 1
-    ctp = np.cumsum(tp)
-    rec, prec = ctp / ngt, ctp / np.arange(1, len(tp) + 1)
-    mrec, mpre = np.concatenate([[0.0], rec, [1.0]]), np.concatenate([[0.0], prec, [0.0]])
-    mpre = np.maximum.accumulate(mpre[::-1])[::-1]
-    k = np.where(mrec[1:] != mrec[:-1])[0]
-    return float(np.sum((mrec[k + 1] - mrec[k]) * mpre[k + 1]))
+    return _ap_from_tp(tp, ngt)
 
 
 def tno_means(path, metric):
@@ -113,11 +150,20 @@ def main():
         gt[idx[r["image"]]].append([float(r[k]) for k in ("x1", "y1", "x2", "y2")])
     gt = [np.array(g, dtype=np.float64).reshape(-1, 4) for g in gt]
     ngt = sum(len(g) for g in gt)
-    worst = 0.0
-    for r in rows:
+    worst, loop_diff = 0.0, 0.0
+    check_loop = "--check-loop" in sys.argv
+    for n, r in enumerate(rows, 1):
         z = np.load(os.path.join(R32, "preds", r["tag"] + ".npz"))
-        worst = max(worst, abs(ap50(z["img"], z["boxes"].astype(np.float64), z["score"].astype(np.float64), gt, ngt)
-                               - float(r["ap50"])))
+        args = (z["img"], z["boxes"].astype(np.float64), z["score"].astype(np.float64), gt, ngt)
+        a_fast = ap50(*args)
+        worst = max(worst, abs(a_fast - float(r["ap50"])))
+        if check_loop:
+            loop_diff = max(loop_diff, abs(ap50_loop(*args) - a_fast))
+            print(f"  [{n}/{len(rows)}] {r['tag']}: vectorised vs loop {abs(ap50_loop(*args) - a_fast):.1e}",
+                  file=sys.stderr, flush=True)
+    if check_loop:
+        print(f"--check-loop: vectorised AP50 equals the kernel's loop on all {len(rows)} networks to {loop_diff:.1e}",
+              file=sys.stderr)
     lines.append(f"integrity: AP50 recomputed from the raw detections, largest difference {worst:.1e} "
                  + ("(passes 1e-6)" if worst < 1e-6 else "-- FAILS, nothing is read"))
     lines.append(f"ground truth: {ngt} person boxes in 1000 images")

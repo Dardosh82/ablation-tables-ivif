@@ -15,6 +15,7 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REL = os.path.dirname(os.path.dirname(HERE))
@@ -63,7 +64,8 @@ def main():
         out_new = os.path.join(tree, rec)
         if os.path.exists(out_new):
             os.remove(out_new)
-        print(f"\n== {script}", flush=True)
+        print(f"\n== {script}  (running ...)", flush=True)
+        t0 = time.time()
         r = subprocess.run([sys.executable, os.path.join(tree, script)], cwd=os.path.dirname(os.path.join(tree, script)),
                            capture_output=True, text=True, encoding="utf-8", errors="replace",
                            env=dict(os.environ, PYTHONIOENCODING="utf-8"))
@@ -72,7 +74,8 @@ def main():
         same = os.path.isfile(out_new) and filecmp.cmp(out_rec, out_new, shallow=False) if os.path.isfile(out_rec) else None
         if not same and os.path.isfile(out_new) and os.path.isfile(out_rec):   # line endings may differ only
             same = open(out_rec, encoding="utf-8").read().split() == open(out_new, encoding="utf-8").read().split()
-        print(f"   exit {r.returncode}; output {'IDENTICAL to' if same else 'DIFFERS from'} the recorded {rec}")
+        print(f"   exit {r.returncode}; {time.time() - t0:.0f} s; output {'IDENTICAL to' if same else 'DIFFERS from'} "
+              f"the recorded {rec}", flush=True)
         if r.returncode != 0:
             print(r.stderr[-1500:])
         bad += (r.returncode != 0) or not same
