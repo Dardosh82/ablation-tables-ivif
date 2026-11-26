@@ -9,6 +9,7 @@ and the rest is named explicitly at the end of this script's output rather than 
 Exit status 1 if any FAIL. Warnings do not fail the build; they are decisions, not defects.
 """
 import os
+import glob
 import re
 import sys
 from collections import Counter
@@ -177,11 +178,23 @@ STALE = {
     r"[Zz]ero of 27": "withdrawn headline 'zero of 27' (claim #10, Run 9)",
     r"leading on 8 of 9": "superseded n=3 lead count; at n=8 it is 7 of 9",
     r"every other row \$n=3\$": "figure 3 caption describes the n=3 table, not Run 9",
+    # Run 31 (2026-11-26) took case study I's sigma from three seeds to eight: claims #21-#23
+    r"ablated model wins": "Row I's MI verdict, withdrawn by Run 31 (claim #21)",
+    r"exceeds the noise floor robustly": "Row I's MI verdict, withdrawn by Run 31 (claim #21)",
+    r"14 of 27 cells against 8": "three-seed capacity count; at eight seeds 4 against 1 (Run 31)",
+    r"not tested for significance\)": "k = 0 spread factor 2.17x; at eight seeds 1.26x, withdrawn (claim #22)",
+    r"deficit is not marginal": "three-seed VIF deficits; at eight seeds 2.2 / 3.2 / 1.6 sigma (claim #23)",
+    r"across 239 training runs": "run count before Run 31; 244",
 }
+# A heredoc once turned the "\r" of "\ref" into a carriage return inside a draft, so the PDF read "Table ef{...}".
+for _md in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "draft", "*.md"))):
+    _raw = open(_md, "rb").read()
+    if _raw.count(b"\r") != _raw.count(b"\r\n"):
+        fail(f"{os.path.basename(_md)} holds a bare carriage return (an escaped \\r gone wrong)")
 for pat, what in STALE.items():
     for m in re.finditer(pat, code):
         # the withdrawn-claims table and its prose name the old count on purpose
-        if re.search(r"withdrawn|At three seeds|was zero|headline itself", code[max(0, m.start() - 200):m.start()]):
+        if re.search(r"withdrawn|At three seeds|was zero|headline itself|\\textbf\{2[1-3]\}|^2[1-3] &", code[max(0, m.start() - 200):m.start()], re.M):
             continue
         fail(f"{what}: ...{code[m.start():m.start() + 60]}")
 

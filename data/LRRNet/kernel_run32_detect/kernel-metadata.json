@@ -1,0 +1,26 @@
+{
+  "id": "mostafanada82/lrrnet-run32-detect",
+  "title": "LRRNet_run32_detect",
+  "code_file": "lrrnet-run32-detect.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [
+    "afradhossain/llvip-dataset",
+    "mostafanada82/crossfuse-tier2-code",
+    "mostafanada82/crossfuse-poscontrol-ckpts",
+    "mostafanada82/lrrnet-replication-scripts",
+    "mostafanada82/lrrnet-run16-ckpts",
+    "mostafanada82/lrrnet-run17-ckpts",
+    "mostafanada82/crossfuse-run32-ckpts"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": [],
+  "machine_shape": "NvidiaTeslaT4",
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461"
+}

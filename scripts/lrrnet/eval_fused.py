@@ -34,6 +34,9 @@ ap.add_argument("--vi", required=True)
 ap.add_argument("--fused", required=True)
 ap.add_argument("--tag", required=True, help="row label, e.g. nb4_seed42")
 ap.add_argument("--csv", required=True, help="CSV to append one row to")
+# Run 29 (RUN29_PREREGISTRATION.md, 2026-11-25): also keep one row per image, for the runs-by-images bootstrap.
+# The mean row above is written exactly as before and is the integrity check against the record.
+ap.add_argument("--per-image", default=None, help="optional CSV to append one row per image to (tag, image, metrics)")
 a = ap.parse_args()
 
 # Python puts THIS SCRIPT'S OWN DIRECTORY at sys.path[0] -- not the working directory. When the
@@ -76,6 +79,7 @@ for name in names:
     A = read_gray(os.path.join(a.ir, name))     # infrared
     B = read_gray(os.path.join(a.vi, name))     # visible
     rows.append({
+        "image": stem,
         "EN":   float(Evaluator.EN(F)),
         "MI":   float(Evaluator.MI(F, A, B)),
         "SD":   float(Evaluator.SD(F)),
@@ -101,3 +105,13 @@ with open(a.csv, "a", newline="") as f:
         w.writerow(["tag", "n"] + METRICS)
     w.writerow([a.tag, len(rows)] + [f"{mean[m]:.6f}" for m in METRICS])
 print(f"appended to {a.csv}")
+
+if a.per_image:
+    new = not os.path.exists(a.per_image)
+    with open(a.per_image, "a", newline="") as f:
+        w = csv.writer(f)
+        if new:
+            w.writerow(["tag", "image"] + METRICS)
+        for r in rows:
+            w.writerow([a.tag, r["image"]] + [f"{r[m]:.9g}" for m in METRICS])
+    print(f"appended {len(rows)} per-image rows to {a.per_image}")

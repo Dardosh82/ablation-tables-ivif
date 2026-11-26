@@ -307,14 +307,16 @@ def fig3_table4_remeasured():
 # Source: draft/04_case_study_I.md; the *values* are the authors' published numbers and the
 # *sigma* is ours. That mixing is stated in the caption, as the section's revision note requires.
 # ================================================================================================
-# Delta in units of the SAMPLE SD of three seeds (analyse_tablevi_direct.py). Until 2026-09-13 these used
-# the population SD and read 0.7 / 1.0 / 14.3 / 7.7 -- withdrawn claim #13.
-ROW_I = [("EN", 7.21, 7.20, 0.6), ("SCD", 1.70, 1.67, 0.8), ("VIF", 0.77, 0.77, 0.0),
-         ("SSIM", 0.99, 0.99, 0.0), ("MI", 2.13, 2.19, 11.5), ("Qabf", 0.54, 0.55, 6.3)]
-# The published values carry two decimals, so each difference is uncertain by up to 0.01. Range in sigma
-# consistent with that rounding, sigma = SIGMA_TNO of analyse_tablevi_direct.py, rounded half up (audit 2026-10-13).
-ROW_I_RANGE = {"EN": (0.0, 1.2), "SCD": (0.5, 1.1), "VIF": (0.0, 6.3), "SSIM": (0.0, 1.4),
-               "MI": (9.6, 13.5), "Qabf": (0.0, 12.5)}
+# Delta in units of the SAMPLE SD of EIGHT seeds (Run 31; studied_papers/CrossFuse/Tier2_CrossFuse/results_run31/
+# RUN31_ANALYSIS.txt, R3). The fifth field is the three-seed value it replaced (0.6 / 0.8 / 0.0 / 0.0 / 11.5 / 6.3),
+# drawn as a hollow marker; until 2026-09-13 those used the population SD -- withdrawn claim #13. Row I's MI reading
+# (11.5 sigma_3, "ablated model wins") is withdrawn claim #21.
+ROW_I = [("EN", 7.21, 7.20, 0.2, 0.6), ("SCD", 1.70, 1.67, 0.5, 0.8), ("VIF", 0.77, 0.77, 0.0, 0.0),
+         ("SSIM", 0.99, 0.99, 0.0, 0.0), ("MI", 2.13, 2.19, 1.1, 11.5), ("Qabf", 0.54, 0.55, 3.1, 6.3)]
+# The published values carry two decimals, so each difference is uncertain by up to 0.01. Range in sigma_8
+# consistent with that rounding (RUN31_ANALYSIS.txt, R3).
+ROW_I_RANGE = {"EN": (0.0, 0.5), "SCD": (0.3, 0.7), "VIF": (0.0, 1.6), "SSIM": (0.0, 1.3),
+               "MI": (0.9, 1.3), "Qabf": (0.0, 6.1)}
 
 
 def fig4_row_i():
@@ -326,6 +328,9 @@ def fig4_row_i():
     robust = [ROW_I_RANGE[l][0] > 3 for l in labels]
     colors = [S2 if r else MUTED for r in robust]
     ax.bar(x, deltas, width=0.55, color=colors, zorder=3)
+    ax.scatter(x, [r[4] for r in ROW_I], s=28, facecolors="none", edgecolors=INK2, linewidths=1.1, zorder=6,
+               label="the same difference against σ from three seeds")
+    ax.legend(loc="upper left", fontsize=8, frameon=False, bbox_to_anchor=(0.0, 0.93))
     for xi, lbl in enumerate(labels):
         lo, hi = ROW_I_RANGE[lbl]
         ax.plot([xi, xi], [lo, hi], color=INK, lw=1.4, zorder=5)
@@ -348,10 +353,10 @@ def fig4_row_i():
             ax.text(xi + 0.12, hi - 1.2, "not resolvable\nat 2 d.p.", ha="left", fontsize=8, color=MUTED)
     frame(ax, xgrid=False)
     footer(fig,
-             "Values are the authors' own published numbers; σ (sample SD of three retrained seeds of the paper's "
+             "Values are the authors' own published numbers; σ (sample SD of eight retrained seeds of the paper's "
              "Eq. (16) schedule) is measured here.\nThe line on each bar is the range consistent with two-decimal "
-             "rounding. Only MI exceeds the noise floor robustly, and it favours the model\nwithout the mechanism; "
-             "the paper's stated justification rests on EN and SCD. This result cost no GPU time.",
+             "rounding. No difference exceeds the noise floor; Q^AB/F cannot be resolved at 2 d.p.\nHollow markers: "
+             "the same differences against σ from three seeds, which made MI look robust (11.5 σ) -- withdrawn.",
              )
     save(fig, "fig_p4_row_i_vs_sigma.png")
 

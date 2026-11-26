@@ -59,6 +59,14 @@ an interpretation chosen after seeing the numbers is excluded by construction.
 on a laptop in seconds, need no data, and verify the parameter-count claims the paper's constructive
 section rests on.
 
+## Runs 29-32
+
+`scripts/runs29-32/` holds the kernel builders and analyses of the four last registered runs (hierarchical
+bootstrap; the decoder skip removed; case study I's sigma at eight seeds; downstream person detection). They
+read and write paths in the project's own layout, `studied_papers/...`, which `data/` reproduces under the same
+names; each run's registration is in `registrations/`, and its outputs (per-run, per-image and per-detection
+summaries) in `data/`.
+
 ## The paper source
 
 ```

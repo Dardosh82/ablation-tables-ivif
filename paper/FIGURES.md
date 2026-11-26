@@ -45,7 +45,8 @@ shaded band is the significance threshold at n = 8
 
 **Figure 4.** *Reading a published row against seed noise.* **Values are the authors' published
 numbers; σ is measured here** and was never reported by them — the caption must say so, or a reader
-will take the whole row as our measurement.
+will take the whole row as our measurement. Since Run 31 σ is the eight-seed estimate; hollow markers show the three-seed values, under which MI
+looked robust (11.5 σ, withdrawn claim #21).
 
 **Figure 5.** *Depth with the parameter count fixed.* Weight tying makes the parameter count
 identical at depth 4 and depth 8, so depth varies with the parameter count held fixed by construction rather

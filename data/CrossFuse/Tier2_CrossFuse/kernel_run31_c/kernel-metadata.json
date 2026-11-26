@@ -1,0 +1,22 @@
+{
+  "id": "mostafanada82/cf-run31-c",
+  "title": "cf-run31-c",
+  "code_file": "cf-run31-c.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "mostafanada82/crossfuse-tier2-code",
+    "mostafanada82/crossfuse-testsets"
+  ],
+  "kernel_sources": [
+    "mostafanada82/crossfuse-tier2"
+  ],
+  "competition_sources": [],
+  "model_sources": [],
+  "machine_shape": "NvidiaTeslaT4",
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461"
+}
