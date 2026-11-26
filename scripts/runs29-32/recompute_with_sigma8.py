@@ -120,7 +120,8 @@ for lab, runs_rel in (("sigma_3", list(old.values())), ("sigma_8", allr)):
             rel = np.array([x[ds][m] for x in runs_rel])
             F = K[:, i].var(ddof=1) / rel.var(ddof=1)
             ps.append(2 * min(stats.f.sf(F, 4, len(rel) - 1), stats.f.cdf(F, 4, len(rel) - 1)))
-            cells.append((ds, m, round(F ** 0.5, 2)))
+            # a plain float, so the printed tuple reads the same under numpy 1 and 2 (numpy 2 writes np.float64(0.1))
+            cells.append((ds, m, round(float(F ** 0.5), 2)))
     ps = np.array(ps)
     surv = []
     for rank, i in enumerate(np.argsort(ps)):

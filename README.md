@@ -75,7 +75,8 @@ python scripts/runs29-32/make_tree.py --run   # copies data/ to _tree/studied_pa
 The whole command took about one minute on a laptop CPU (measured 2026-11-26: Run 29's bootstrap 49 s, Run 32 7 s,
 the other three 2-4 s each). Run 32's AP50 recomputation from the 2.24 million raw detections is vectorised; the detection-by-
 detection loop it replaced, kept as `ap50_loop`, gives identical values on all 37 networks
-(`python _tree/studied_papers/LRRNet/scripts/analyse_run32.py --check-loop`, a few minutes).
+(`python _tree/studied_papers/LRRNet/scripts/analyse_run32.py --check-loop`, about four minutes here, measured;
+`--check-loop 3` checks the first three networks in about 25 seconds).
 
 Each run's registration is in `registrations/`; its recorded outputs are in `data/`, including the analyses' own
 reports (`RUN29_ANALYSIS.txt` to `RUN32_ANALYSIS.txt`, `SIGMA8_RECOMPUTE.txt`) and Run 32's raw detections

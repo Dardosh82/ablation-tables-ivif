@@ -151,18 +151,26 @@ def main():
     gt = [np.array(g, dtype=np.float64).reshape(-1, 4) for g in gt]
     ngt = sum(len(g) for g in gt)
     worst, loop_diff = 0.0, 0.0
+    # --check-loop [N]: also run the kernel's loop on the first N networks (all 37 if N is omitted; about 3 s each here,
+    # so "--check-loop 3" is a quick check that fits a short time limit)
     check_loop = "--check-loop" in sys.argv
+    n_loop = len(rows)
+    if check_loop:
+        i = sys.argv.index("--check-loop")
+        if i + 1 < len(sys.argv) and sys.argv[i + 1].isdigit():
+            n_loop = int(sys.argv[i + 1])
     for n, r in enumerate(rows, 1):
         z = np.load(os.path.join(R32, "preds", r["tag"] + ".npz"))
         args = (z["img"], z["boxes"].astype(np.float64), z["score"].astype(np.float64), gt, ngt)
         a_fast = ap50(*args)
         worst = max(worst, abs(a_fast - float(r["ap50"])))
-        if check_loop:
+        if check_loop and n <= n_loop:
             loop_diff = max(loop_diff, abs(ap50_loop(*args) - a_fast))
             print(f"  [{n}/{len(rows)}] {r['tag']}: vectorised vs loop {abs(ap50_loop(*args) - a_fast):.1e}",
                   file=sys.stderr, flush=True)
     if check_loop:
-        print(f"--check-loop: vectorised AP50 equals the kernel's loop on all {len(rows)} networks to {loop_diff:.1e}",
+        print(f"--check-loop: largest |vectorised - loop| AP50 over {min(n_loop, len(rows))} of {len(rows)} networks: "
+              f"{loop_diff:.1e}",
               file=sys.stderr)
     lines.append(f"integrity: AP50 recomputed from the raw detections, largest difference {worst:.1e} "
                  + ("(passes 1e-6)" if worst < 1e-6 else "-- FAILS, nothing is read"))
