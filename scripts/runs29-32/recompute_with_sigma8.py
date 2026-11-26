@@ -129,3 +129,20 @@ for lab, runs_rel in (("sigma_3", list(old.values())), ("sigma_8", allr)):
         surv.append(cells[i])
     print(f"  {lab}: median sd ratio {np.median([c[2] for c in cells]):.2f}, larger in "
           f"{sum(c[2] > 1 for c in cells)} of 27; F test surviving Holm: {surv}")
+
+print("\n" + "=" * 100)
+print("F. Table VI rows I and II (the authors' printed values, TNO) under the two-decimal rounding rule")
+print("   noise: whole range < 3 sigma; robust: low end >= 3 sigma; else not resolvable at two decimals")
+print("=" * 100)
+FULL = {"EN": 7.21, "MI": 2.13, "SCD": 1.70, "VIF": 0.77, "Qabf": 0.54, "SSIM": 0.99}
+ROWS = {"I  w/o Top-K": {"EN": 7.20, "MI": 2.19, "SCD": 1.67, "VIF": 0.77, "Qabf": 0.55, "SSIM": 0.99},
+        "II w/o L_ssl": {"EN": 7.22, "MI": 2.08, "SCD": 1.69, "VIF": 0.75, "Qabf": 0.54, "SSIM": 0.96}}
+for row, abl in ROWS.items():
+    for lab, S in (("sigma_3", S3["TNO"]), ("sigma_8", S8["TNO"])):
+        cells = []
+        for m in FULL:
+            d = FULL[m] - abl[m]
+            pt, lo, hi = abs(d) / S[m], max(0.0, abs(d) - 0.01) / S[m], (abs(d) + 0.01) / S[m]
+            v = "noise" if hi < 3 else ((("full" if d > 0 else "ablated") + " robust") if lo >= 3 else "unresolvable")
+            cells.append(f"{m} {pt:.1f} ({lo:.1f}-{hi:.1f}) {v}")
+        print(f"  row {row} {lab}: " + "; ".join(cells))
